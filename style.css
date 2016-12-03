@@ -24,10 +24,12 @@ body {
 #baphomet {
     /*background-color: green;*/
     background-image: url("images/Baphomet.jpg");
-    background-size: cover;
-    height: 950px;
+    background-size: contain;
+    height: 900px;
     background-position: center;
     color: white;
+    background-color: black;
+    background-repeat: no-repeat;
 }
 
 #baphomet #touchdown {
@@ -40,6 +42,7 @@ body {
     margin-bottom: 0;
     padding-bottom: 30px;
 }
+
 #weeklystats {
     color: white;
     padding-left: 0px;
@@ -47,7 +50,8 @@ body {
 }
 
 .weekly h1 {
-    text-align: left;;
+    text-align: left;
+    ;
     font-size: 50px;
 }
 
@@ -73,17 +77,22 @@ body {
     height: 369px;
     width: 603px;
 }
-.standingspage  {
+
+.standingspage {
     padding-top: 5%;
 }
-.standingsheader    {
+
+.standingsheader {
     color: white;
     text-align: center;
     padding-bottom: 30px;
 }
+
 .standingsheader h1 {
     font-size: 60px;
+    font-family: 'Candal', sans-serif;
 }
+
 
 /*HISTORY*/
 
@@ -103,23 +112,37 @@ body {
 #history p {
     font-size: 30px;
     font-family: sans-serif;
-margin-bottom: 0px;}
+    margin-bottom: 0px;
+}
 
 
 /*WEEKLY STATS*/
 
+.weeklystatsheader {
+    font-family: 'Candal', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
 #weeklystats {
     color: white;
-    text-align: left;
+    /*text-align: left;*/
+}
+
+.weekly img {
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
 }
 
 .weekly h1 {
-    text-align: left;
+    /*text-align: left;*/
     font-size: 30px;
 }
 
 .weekly ol {
-    text-align: left;
+    /*text-align: left;*/
     font-size: 20px;
 }
 
@@ -134,6 +157,7 @@ margin-bottom: 0px;}
 
 #championsheader h1 {
     font-size: 60px;
+    font-family: 'Candal', sans-serif;
 }
 
 #championspic {
@@ -163,6 +187,7 @@ margin-bottom: 0px;}
 
 #chickenbowlheader h1 {
     font-size: 60px;
+    font-family: 'Candal', sans-serif;
 }
 
 #chickenbowlpic {
