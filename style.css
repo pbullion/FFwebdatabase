@@ -25,18 +25,35 @@ body {
     /*background-color: green;*/
     background-image: url("images/Baphomet.jpg");
     background-size: cover;
-    height: 1000px;
+    height: 950px;
     background-position: center;
     color: white;
 }
 
 #baphomet #touchdown {
     padding-top: 400px;
+    padding-bottom: 40px;
 }
 
 .jumbotron {
     text-align: center;
     margin-bottom: 0;
+    padding-bottom: 30px;
+}
+#weeklystats {
+    color: white;
+    padding-left: 0px;
+    /*text-align: left;*/
+}
+
+.weekly h1 {
+    text-align: left;;
+    font-size: 50px;
+}
+
+.weekly ol {
+    text-align: left;
+    font-size: 25px;
 }
 
 
@@ -56,7 +73,17 @@ body {
     height: 369px;
     width: 603px;
 }
-
+.standingspage  {
+    padding-top: 5%;
+}
+.standingsheader    {
+    color: white;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.standingsheader h1 {
+    font-size: 60px;
+}
 
 /*HISTORY*/
 
@@ -83,7 +110,7 @@ margin-bottom: 0px;}
 
 #weeklystats {
     color: white;
-    /*text-align: left;*/
+    text-align: left;
 }
 
 .weekly h1 {
@@ -102,6 +129,7 @@ margin-bottom: 0px;}
 #championsheader {
     text-align: center;
     color: white;
+    padding-bottom: 30px;
 }
 
 #championsheader h1 {
@@ -111,7 +139,7 @@ margin-bottom: 0px;}
 #championspic {
     text-align: center;
     color: white;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 }
 
 #championspic img {
@@ -144,13 +172,13 @@ margin-bottom: 0px;}
 }
 
 #chickenbowlpiccody {
-    border-radius: 25%;
+    border-radius: 5%;
     height: 800px;
     width: 450px;
 }
 
 #chickenbowlpicdoug {
-    border-radius: 25%;
+    border-radius: 5%;
     height: 800px;
     width: 300px;
 }
