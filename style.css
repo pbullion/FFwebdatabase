@@ -4,6 +4,16 @@ body {
     box-sizing: border-box;
 }
 
+.clearfix() {
+    &:before, &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
 .navbar {
     background-color: black;
     padding-top: 5px;
@@ -12,11 +22,16 @@ body {
 }
 
 #baphomet {
-    background-color: green;
-    /*background-image: url("images/baphomet.jpg");*/
+    /*background-color: green;*/
+    background-image: url("images/baphomet.jpg");
     background-size: cover;
     height: 1000px;
     background-position: center;
+    color: white;
+}
+
+#baphomet #touchdown {
+    padding-top: 400px;
 }
 
 .jumbotron {
@@ -27,19 +42,19 @@ body {
 
 /*STANDINGS*/
 
-/*#standingspic1 {
-    height: 150px;
-    width: 203px;
+#standings {
+    text-align: center;
+    padding: 20px;
+}
+
+#standingspic1 {
+    height: 369px;
+    width: 500px;
 }
 
 #standingspic2 {
-    height: 153px;
-    width: 250px;
-}*/
-
-.standings {
-    text-align: center;
-    padding: 0;
+    height: 369px;
+    width: 603px;
 }
 
 
@@ -47,27 +62,99 @@ body {
 
 #history {
     text-align: center;
+    padding: 20px 225px;
+    color: white;
 }
 
 #history h1 {
-    font-size: 40px;
+    font-size: 60px;
     font-style: bold;
     font-family: sans-serif;
+    padding-bottom: 25px;
 }
 
 #history p {
-    font-size: 25px;
+    font-size: 30px;
     font-family: sans-serif;
-}
+margin-bottom: 0px;}
+
+
 /*WEEKLY STATS*/
-#weeklystats    {
+
+#weeklystats {
+    color: white;
     /*text-align: left;*/
 }
-.weekly h1  {
-    text-align: center;
+
+.weekly h1 {
+    text-align: left;
     font-size: 30px;
 }
-.weekly ol  {
+
+.weekly ol {
     text-align: left;
     font-size: 20px;
+}
+
+
+/*CHAMPIONS*/
+
+#championsheader {
+    text-align: center;
+    color: white;
+}
+
+#championsheader h1 {
+    font-size: 60px;
+}
+
+#championspic {
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+}
+
+#championspic img {
+    border-radius: 100%;
+    height: 250px;
+    width: 250px;
+}
+
+#championspic h2 {
+    margin-top: 5px;
+}
+
+
+/*CHICKEN BOWL*/
+
+#chickenbowlheader {
+    text-align: center;
+    color: white;
+    padding-bottom: 50px;
+}
+
+#chickenbowlheader h1 {
+    font-size: 60px;
+}
+
+#chickenbowlpic {
+    text-align: center;
+    color: white;
+    padding-bottom: 100px;
+}
+
+#chickenbowlpiccody {
+    border-radius: 25%;
+    height: 800px;
+    width: 450px;
+}
+
+#chickenbowlpicdoug {
+    border-radius: 25%;
+    height: 800px;
+    width: 300px;
+}
+
+#chickenbowlpic h2 {
+    margin-top: 5px;
 }
