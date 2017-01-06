@@ -44,8 +44,9 @@ def champions():
 def chickenbowl():
     return render_template("chickenbowl.html",title="CHICKENS")
 
-@app.route("/standings")
-def standings():
+@app.route("/<year>/standings")
+def standings(year):
+    year = year
     return render_template("standings.html",title="Standings")
 
 @app.route("/members")

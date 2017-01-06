@@ -10,11 +10,37 @@
 
 {% block body %}
 
-    <ul class="list-group>"
 
-{% for entry in standings %}
-    <li class="list-group-item">{{entry.teamname}}&nbsp;&nbsp;{{entry.wins}}&nbsp;-&nbsp;{{entry.losses}}
+<table>
+    <tr id="tableheader">
+        <th>Team</th>
+        <th>Owner</th>
+        <th>Points for</th>
+        <th>Win</th>
+        <th>Loss</th>
+    </tr>
+{{ for team in result_list }}
+    <tr>
+        <th>team.team</th>
+        <th>team.owner</th>
+        <th>team.points_for</th>
+        <th>team.wins</th>
+        <th>team.loss</th>
 
+
+
+
+    </tr>
+
+
+
+
+
+
+
+
+
+</table>
 
 
 
