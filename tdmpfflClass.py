@@ -58,20 +58,20 @@ class Owners(object):
         result_list = query.namedresult()
         db.close()
         return result_list
-    # @staticmethod
+    @staticmethod
+    def standings(year):
+        db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
+        query = db.query("select team,owner,sum(wins) wins,sum(loss) loss,idowners from winloss where 'year' ='%s' group by team,owner,idowners order by sum(wins) desc" % year)
+        result_list = query.namedresult()
+        db.close()
+        return result_list
+#   @staticmethod
     # def owneryears(idowners):
     #     db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
     #     query = db.query("select 'year',sum(wins) wins,sum(loss) loss,idowners from winloss where idowners='%d' group by 'year',idowners order by year asc" % idowners)
     #     result_list = query.namedresult()
     #     db.close()
     #     return result_list
-    @staticmethod
-    def standings(year):
-        db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
-        query = db.query("select team,owner,sum(wins) wins,sum(loss) loss,idowners from winloss where 'year'='%s' group by team,owner,idowners order by sum(wins) desc" % year)
-        result_list = query.namedresult()
-        db.close()
-        return result_list
 
 class Teams(object):
     def __init__(self,idowners=0):
