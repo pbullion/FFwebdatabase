@@ -20,12 +20,13 @@
         <th>Loss</th>
     </tr>
     <tr>
-{{% for team in result_list %}}        <th>team.team</th>
+{% for team in result_list %}
+        <th>team.team</th>
         <th>team.owner</th>
         <th>team.points_for</th>
         <th>team.wins</th>
         <th>team.loss</th>
-    {{% endfor %}}
+    {% endfor %}
     </tr>
 </table>
 
