@@ -39,7 +39,7 @@ db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
 #         return lastId
 
 class Owners(object):
-    def __init__(self,):
+    def __init__(self):
         self.name = ""
         self.yearstarted = 0
         self.yearended = 0
@@ -68,8 +68,7 @@ class Owners(object):
     @staticmethod
     def standings(year):
         db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
-        query = db.query(
-            "select team,owner,sum(wins) wins,sum(loss) loss,idowners from winloss where 'year'='%s'" group by owner,idowners order by sum(wins) desc" % 'year')
+        query = db.query("select team,owner,sum(wins) wins,sum(loss) loss,idowners from winloss where 'year'='%s' group by owner,idowners order by sum(wins) desc" % 'year')
         result_list = query.namedresult()
         db.close()
         return result_list
