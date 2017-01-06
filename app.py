@@ -48,7 +48,7 @@ def chickenbowl():
 def standings(year):
     year = year
     result_list = Owners.standings(year)
-    return render_template("standings.html",title="Standings")
+    return render_template("standings.html",title="Standings",result_list=result_list)
 
 @app.route("/members")
 def members():
