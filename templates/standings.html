@@ -11,7 +11,7 @@
 
 
 <table>
-    <tr id="tableheader">
+    <tr>
         <th>Team</th>
         <th>Owner</th>
         <th>Points for</th>
@@ -21,11 +21,11 @@
 
     {% for team in result_list %}
     <tr>
-        <th>team.team</th>
-        <th>team.owner</th>
-        <th>team.points_for</th>
-        <th>team.wins</th>
-        <th>team.loss</th>
+        <td>team.team</td>
+        <td>team.owner</td>
+        <td>team.points_for</td>
+        <td>team.wins</td>
+        <td>team.loss</td>
     </tr>
     {% endfor %}
 </table>
