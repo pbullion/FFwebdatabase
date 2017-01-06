@@ -47,6 +47,7 @@ def chickenbowl():
 @app.route("/<year>/standings")
 def standings(year):
     year = year
+    result_list = Owners.standings(year)
     return render_template("standings.html",title="Standings")
 
 @app.route("/members")
