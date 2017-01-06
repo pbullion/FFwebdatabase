@@ -19,15 +19,15 @@
         <th>Win</th>
         <th>Loss</th>
     </tr>
-{{ for team in result_list }}
     <tr>
+    {{ for team in result_list }}
         <th>team.team</th>
         <th>team.owner</th>
         <th>team.points_for</th>
         <th>team.wins</th>
         <th>team.loss</th>
-    </tr>
 {{ endfor }}
+    </tr>
 
 
 
