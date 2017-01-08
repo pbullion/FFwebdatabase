@@ -11,17 +11,30 @@
 
 {% block body %}
 
-<ul>
 
+<table>
     {% for owner in result_list %}
-
-    <li><a href="{{owner.idowners}}/teamnames">{{owner.name}}</a>&nbsp;&nbsp;{{owner.yearstarted}}&nbsp;-&nbsp;{{owner.yearended}}
-
-    </li>
-
+    <tr>
+        <td><a href="{{owner.idowners}}/teamnames">{{ owner.name }}</a></td>
+        <td>{{ owner.yearstarted }}</td>
+        <td>{{ owner.yearended }}</td>
+    </tr>
     {% endfor %}
+</table>
 
-</ul>
+
+
+{#<ul>#}
+{##}
+{#    {% for owner in result_list %}#}
+{##}
+{#    <li><a href="{{owner.idowners}}/teamnames">{{owner.name}}</a>&nbsp;&nbsp;{{owner.yearstarted}}&nbsp;-&nbsp;{{owner.yearended}}#}
+{##}
+{#    </li>#}
+{##}
+{#    {% endfor %}#}
+{##}
+{#</ul>#}
 {% endblock %}
 
 

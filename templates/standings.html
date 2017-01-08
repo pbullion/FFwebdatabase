@@ -21,11 +21,11 @@
 
     {% for team in result_list %}
     <tr>
-        <td>team.team</td>
-        <td>team.owner</td>
-        <td>team.points_for</td>
-        <td>team.wins</td>
-        <td>team.loss</td>
+        <td>{{ team.team }}</td>
+        <td>{{ team.owner }}</td>
+        <td>{{ team.points_for }}</td>
+        <td>{{ team.wins }}</td>
+        <td>{{ team.loss }}</td>
     </tr>
     {% endfor %}
 </table>
