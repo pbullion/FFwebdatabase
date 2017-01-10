@@ -1,0 +1,115 @@
+#video  {
+    margin-top: 50px;
+    width: 100%;
+    height: 50%;
+    opacity: 0.5;
+}
+
+
+
+/*@media only screen and (min-width:640px) {*/
+    /*.home .welcome .copy p {*/
+        /*font-size: 1.1em*/
+    /*}*/
+/*}*/
+
+/*.home .welcome .copy button {*/
+    /*border: 2px solid #fff;*/
+    /*padding: 5px 20px;*/
+    /*margin: 15px 0*/
+/*}*/
+
+/*.home .welcome .copy button:hover {*/
+    /*color: #000*/
+/*}*/
+
+/*.home .welcome .video_wrapper {*/
+    /*height: 200px*/
+/*}*/
+
+/*@media only screen and (min-width:640px) {*/
+    /*.home .welcome .video_wrapper {*/
+        /*height: 300px*/
+    /*}*/
+/*}*/
+
+/*@media only screen and (min-width:840px) {*/
+    /*.home .welcome .copy p {*/
+        /*font-size: 1em*/
+    /*}*/
+    /*.home .welcome .video_wrapper {*/
+        /*height: 450px*/
+    /*}*/
+/*}*/
+
+/*@media only screen and (min-width:950px) {*/
+    /*.home .welcome .copy {*/
+        /*top: 240px*/
+    /*}*/
+    /*.home .welcome .video_wrapper {*/
+        /*height: 500px*/
+    /*}*/
+/*}*/
+
+/*@media only screen and (min-width:1300px) {*/
+    /*.home .welcome .copy {*/
+        /*text-align: center;*/
+        /*left: 0*/
+    /*}*/
+    /*.home .welcome .video_wrapper {*/
+        /*height: 600px*/
+    /*}*/
+/*}*/
+
+/*.home .welcome img {*/
+    /*width: 120%;*/
+    /*position: absolute;*/
+    /*z-index: 1;*/
+    /*top: 70px;*/
+    /*left: 0*/
+/*}*/
+
+/*@media only screen and (min-width:840px) {*/
+    /*.home .welcome img {*/
+        /*top: 100px;*/
+        /*width: 120%*/
+    /*}*/
+/*}*/
+
+/*@media only screen and (min-width:950px) {*/
+    /*.home .welcome img {*/
+        /*top: 90px;*/
+        /*width: 110%*/
+    /*}*/
+/*}*/
+
+/*.home .welcome video {*/
+    /*position: absolute;*/
+    /*z-index: 2;*/
+    /*width: 100%;*/
+    /*display: none*/
+/*}*/
+
+/*.home .welcome .overlay {*/
+    /*background: rgba(0, 0, 0, .7);*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*z-index: 3;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0*/
+/*}*/
+
+/*.home .slide_up {*/
+    /*position: relative;*/
+    /*background: 0 0;*/
+    /*z-index: 5;*/
+    /*overflow: hidden;*/
+    /*margin: 0*/
+/*}*/
+
+/*.home .slide_up .slice {*/
+    /*border-bottom: 50px solid #fff;*/
+    /*border-left: 1300px solid transparent;*/
+    /*display: none*/
+/*}*/
