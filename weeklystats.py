@@ -1,14 +1,19 @@
 import nflgame
 
+<<<<<<< Updated upstream
 
 Class Weeklystats():
     @staticmethod
+=======
+class Weeklystats():
+>>>>>>> Stashed changes
     def passing():
         games = nflgame.games(2016, week=16)
         players = nflgame.combine_game_stats(games)
         for p in players.passing().sort('passing_yds').limit(5):
             msg = '%s %d of %d passing for %d yards and %d TDs'
             print msg % (p, p.passing_comp, p.passing_att, p.passing_yds, p.passing_tds)
+            return msg
 
     @staticmethod
     def receiving():
@@ -25,8 +30,11 @@ Class Weeklystats():
         for p in players.rushing().sort('rushing_yds').limit(15):
             msg = '%s %d carries for %d yards and %d TDs'
             print msg % (p, p.rushing_att, p.rushing_yds, p.rushing_tds)
+<<<<<<< Updated upstream
 
 
 quarterbacks_list = Weeklystats.passing()
     receiving_list = Weeklystats.passing()
     rushing_list = Weeklystats.rushing()
+=======
+>>>>>>> Stashed changes

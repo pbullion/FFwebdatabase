@@ -14,9 +14,11 @@ video {
     text-align: center;
 	color: #fff;
 	font-size: 3.5em;
-	font-family: 'Amaranth', sans-serif;
-    /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
 
+}
+.stat-text {
+    font-size: .55em;
+    color: orange;
 }
 .opacity    {
     position: absolute;
