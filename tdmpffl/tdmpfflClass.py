@@ -6,6 +6,8 @@
 # import sys
 import pg
 import os
+import nflgame
+
 
 DBUSER=os.environ.get('DBUSER', True)
 DBPASS=os.environ.get('DBPASS', True)
@@ -99,3 +101,25 @@ class Teams(object):
     #     result_list = query.namedresult()
     #     db.close()
     #     return result_list
+
+Class Weeklystats():
+    def passing():
+        games = nflgame.games(2016, week=16)
+        players = nflgame.combine_game_stats(games)
+        for p in players.passing().sort('passing_yds').limit(5):
+            msg = '%s %d of %d passing for %d yards and %d TDs'
+            print msg % (p, p.passing_comp, p.passing_att, p.passing_yds, p.passing_tds)
+
+    def receiving():
+        games = nflgame.games(2016, week=16)
+        players = nflgame.combine_game_stats(games)
+        for p in players.receiving().sort('receiving_yds').limit(5):
+            msg = '%s %d catches for %d yards and %d TDs'
+            print msg % (p, p.receiving_rec, p.receiving_yds, p.receiving_tds)
+
+    def rushing():
+        games = nflgame.games(2016, week=14)
+        players = nflgame.combine_game_stats(games)
+        for p in players.rushing().sort('rushing_yds').limit(15):
+            msg = '%s %d carries for %d yards and %d TDs'
+            print msg % (p, p.rushing_att, p.rushing_yds, p.rushing_tds)
