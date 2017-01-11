@@ -74,10 +74,16 @@ class Owners(object):
     def topscores():
         db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
         db.debug = True
-        query = db.query(select teamone,teamonescore,teamtwo,teamtwoscore from schedule where year=2016 and week=11)
+        query = db.query("select teamone,teamonescore,teamtwo,teamtwoscore from schedule where year=2016 and week=11")
         result_list = query.namedresult()
         db.close()
-        return result_list
+        teamone = teamone + teamonescore
+        teamtwo = teamtwo + teamtwoscore
+        teams = teamone + teamtwo
+        topteams = []
+        for p in teams.sort('teamscoreone,teamscoretwo').limit(5):
+            topteams.append()
+            return topteams
 
 #   @staticmethod
     # def owneryears(idowners):
@@ -129,6 +135,6 @@ class Weeklystats():
     def rushing():
         games = nflgame.games(2016, week=14)
         players = nflgame.combine_game_stats(games)
-        for p in players.rushing().sort('rushing_yds').limit(15):
+        for p in players.rushing().sort('rushing_yds').limit(5):
             msg = '%s %d carries for %d yards and %d TDs'
             print msg % (p, p.rushing_att, p.rushing_yds, p.rushing_tds)
