@@ -74,16 +74,19 @@ class Owners(object):
     def topscores():
         db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
         db.debug = True
-        query = db.query("select teamone,teamonescore,teamtwo,teamtwoscore from schedule where year=2016 and week=11")
+        query = db.query("select year,week,teamone,teamonescore from schedule team1 where year=2016 and week=11 union select year,week,teamtwo,teamtwoscore from schedule team1 where year=2016 and week=11 order by 4 desc limit 5")
         result_list = query.namedresult()
         db.close()
-        teamone = teamone + teamonescore
-        teamtwo = teamtwo + teamtwoscore
-        teams = teamone + teamtwo
-        topteams = []
-        for p in teams.sort('teamscoreone,teamscoretwo').limit(5):
-            topteams.append()
-            return topteams
+        return result_list
+    @staticmethod
+    def lowscores():
+        db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
+        db.debug = True
+        query = db.query(
+            "select year,week,teamone,teamonescore from schedule team1 where year=2016 and week=11 union select year,week,teamtwo,teamtwoscore from schedule team1 where year=2016 and week=11 order by 4 asc limit 5")
+        result_list = query.namedresult()
+        db.close()
+        return result_list
 
 #   @staticmethod
     # def owneryears(idowners):

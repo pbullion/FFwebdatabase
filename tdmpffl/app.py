@@ -30,7 +30,9 @@ DBNAME=os.environ.get('DBNAME', True)
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    top_list = Owners.topscores()
+    low_list = Owners.lowscores()
+    return render_template("home.html",top_list=top_list,low_list=low_list)
 
 @app.route("/about")
 def about():
