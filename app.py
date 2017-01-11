@@ -2,7 +2,7 @@ import os
 import pg
 from flask import Flask, render_template, request, redirect, url_for, session
 from weeklystats import *
-import config
+
 
 import sys
 reload(sys)
@@ -14,6 +14,7 @@ app.secret_key = "herro"
 
 @app.route('/')
 def home():
-    quarterback = Weeklystats.passing()
-
-    return render_template("landing.html", p=query)
+    quarterbacks_list = Weeklystats.passing()
+    receiving_list = Weeklystats.passing()
+    rushing_list = Weeklystats.rushing()
+    return render_template("landing.html", quarter=quarterbacks_list, receiving = receiving_list)

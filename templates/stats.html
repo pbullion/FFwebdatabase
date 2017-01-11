@@ -13,7 +13,9 @@
             <div class="row">
                 <div class="col-md-12">Quarterback
                 </div>
-                
+                {% for qb in quarterbacks_list %}
+                {(%s %d of %d passing for %d yards and %d TDs)} % (qb, qb.passing_comp, qb.passing_att, qb.passing_yds, qb.passing_tds)
+
             </div>
             <div class="row">
                 <div class="col-md-6 col-xs-12">Receivers
