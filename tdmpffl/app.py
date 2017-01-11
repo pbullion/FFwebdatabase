@@ -30,6 +30,7 @@ DBNAME=os.environ.get('DBNAME', True)
 
 @app.route("/")
 def home():
+
     return render_template("home.html")
 
 @app.route("/about")

@@ -102,7 +102,7 @@ class Teams(object):
     #     db.close()
     #     return result_list
 
-Class Weeklystats():
+class Weeklystats():
     def passing():
         games = nflgame.games(2016, week=16)
         players = nflgame.combine_game_stats(games)

@@ -26,3 +26,18 @@ class Weeklystats():
         for p in players.rushing().sort('rushing_yds').limit(15):
             msg = '%s %d carries for %d yards and %d TDs'
             print msg % (p, p.rushing_att, p.rushing_yds, p.rushing_tds)
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+
+
+quarterbacks_list = Weeklystats.passing()
+    receiving_list = Weeklystats.passing()
+    rushing_list = Weeklystats.rushing()
+=======
+>>>>>>> Stashed changes
+
+{% for qb in quarterbacks_list %}
+
+{ (%s %d of %d passing for %d yards and %d TDs) % (qb, qb.receiving_rec, qb.receiving_yds, qb.receiving_tds) }
+>>>>>>> Stashed changes
