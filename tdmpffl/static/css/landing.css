@@ -45,9 +45,9 @@ body {
     color: white;
     font-size: 2em;
 }
-.logonav    {
-    background-color: white;
-}
+/*.logonav    {*/
+    /*background-color: white;*/
+/*}*/
 .logonav:hover {
     cursor:default;
     transform: rotate(360deg);
