@@ -1,5 +1,9 @@
 import nflgame
 
+# receivers = []
+# for item in receiving_result:
+#     receivers.append(Weeklystats())
+
 
 class Weeklystats():
 
@@ -7,24 +11,27 @@ class Weeklystats():
     def passing():
         games = nflgame.games(2016, week=16)
         players = nflgame.combine_game_stats(games)
+        quarterback_result=[]
         for p in players.passing().sort('passing_yds').limit(5):
-            msg = '%s %d of %d passing for %d yards and %d TDs'
-            print msg % (p, p.passing_comp, p.passing_att, p.passing_yds, p.passing_tds)
-            return msg
-
+            message = '%s %d of %d passes for %d yards and %d TDs'
+            quarterback_result.append(message % (p, p.passing_cmp, p.passing_att, p.passing_yds, p.passing_tds))
+        return quarterback_result
     @staticmethod
     def receiving():
         games = nflgame.games(2016, week=16)
         players = nflgame.combine_game_stats(games)
+        receiving_result=[]
         for p in players.receiving().sort('receiving_yds').limit(5):
             message = '%s %d catches for %d yards and %d TDs'
-            receiving_result = message % (p, p.receiving_rec, p.receiving_yds, p.receiving_tds)
-            return receiving_result
+            receiving_result.append(message % (p, p.receiving_rec, p.receiving_yds, p.receiving_tds))
+        return receiving_result
 
     @staticmethod
     def rushing():
-        games = nflgame.games(2016, week=14)
+        games = nflgame.games(2016, week=16)
         players = nflgame.combine_game_stats(games)
-        for p in players.rushing().sort('rushing_yds').limit(15):
-            msg = '%s %d carries for %d yards and %d TDs'
-            print msg % (p, p.rushing_att, p.rushing_yds, p.rushing_tds)
+        rushing_results = []
+        for p in players.rushing().sort('rushing_yds').limit(5):
+            message = '%s %d rushes for %d yards and %d TDs'
+            rushing_results.append(message % (p, p.rushing_att, p.rushing_yds, p.rushing_tds))
+        return rushing_results

@@ -8,7 +8,7 @@ video {
 	z-index:-100;
 	visibility: visible;
 }
-.text{
+p.text{
     position: relative;
     top: 300px;
     text-align: center;
@@ -112,6 +112,7 @@ ul.sub-menu {
     visibility: hidden;
     padding-left: 0px;
     background: white;
+	list-style: none;
 }
 
 .sub-menu a:hover {
@@ -127,10 +128,20 @@ a, a:hover{
     color: white;
     background-color: #0285C9;
 }
-ul, ol {
-    list-style: none;
-}
+.top5 {
 
+	/*position: relative;*/
+    top: 350px;
+	color: white;
+	font-size: 1.5em;
+	text-align: center; list-style-position:inside;}
+
+
+
+}
+/*ul, ol {
+    list-style: none;
+}*/
 
 /*#bodyOpacity {
     background: black;
