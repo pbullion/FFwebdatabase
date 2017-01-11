@@ -70,6 +70,15 @@ class Owners(object):
         result_list = query.namedresult()
         db.close()
         return result_list
+    @staticmethod
+    def topscores():
+        db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
+        db.debug = True
+        query = db.query(select teamone,teamonescore,teamtwo,teamtwoscore from schedule where year=2016 and week=11)
+        result_list = query.namedresult()
+        db.close()
+        return result_list
+
 #   @staticmethod
     # def owneryears(idowners):
     #     db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
