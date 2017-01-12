@@ -22,10 +22,8 @@ h1  {
     margin-bottom: 20px;
 }
 
-
-li  {
-    color: white;
-    font-size: 25px;
-    list-style: none;
+.members    {
+    margin-top: 150px;
 }
+
 

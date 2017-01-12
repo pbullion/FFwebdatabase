@@ -74,7 +74,7 @@ class Owners(object):
     def topscores():
         db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
         db.debug = True
-        query = db.query("select year,week,teamone,teamonescore from schedule team1 where year=2016 and week=11 union select year,week,teamtwo,teamtwoscore from schedule team1 where year=2016 and week=11 order by 4 desc limit 5")
+        query = db.query("select year,week,teamone,teamonescore from schedule team1 where year=2016 union select year,week,teamtwo,teamtwoscore from schedule team1 where year=2016 order by 4 desc limit 5")
         result_list = query.namedresult()
         db.close()
         return result_list
@@ -83,7 +83,7 @@ class Owners(object):
         db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
         db.debug = True
         query = db.query(
-            "select year,week,teamone,teamonescore from schedule team1 where year=2016 and week=11 union select year,week,teamtwo,teamtwoscore from schedule team1 where year=2016 and week=11 order by 4 asc limit 5")
+            "select year,week,teamone,teamonescore from schedule team1 where year=2016 union select year,week,teamtwo,teamtwoscore from schedule team1 where year=2016 order by 4 asc limit 5")
         result_list = query.namedresult()
         db.close()
         return result_list
