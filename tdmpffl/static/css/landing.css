@@ -85,7 +85,7 @@ body {
 }
 
 ul.sub-menu {
-    visibility: hidden;
+    display: none;
     padding-left: 0px;
     background: white;
 }
@@ -96,7 +96,7 @@ ul.sub-menu {
 }
 
 .nav-item:hover .sub-menu {
-visibility:visible;
+display:block;
 }
 a:hover{
     text-decoration: none;
