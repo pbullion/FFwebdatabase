@@ -3,39 +3,40 @@
    <head>
        <meta charset="UTF-8">
        <title>Fantasy Stuff</title>
-       <link rel="stylesheet" href="static/css/landing.css">
+       <link rel="stylesheet" href="../static/css/landing.css">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-       <link rel="shortcut icon" href="static/logos/10831-american-football.ico" type="image/x-icon">
+       <link rel="shortcut icon" href="../static/logos/10831-american-football.ico" type="image/x-icon">
    </head>
 <body>
 <nav class="navbar navbar-fixed-top">
  <div class="nav">
    <ul class="nav navbar-nav">
-     <li class="active nav-item"><a href="#">Members</a></li>
+     <li class="active nav-item"><a href="/members">Members</a></li>
      <li class="nav-item"><a href="#">Standings</a>
          <ul class="sub-menu ">
-             <li><a href="#">2016</a></li>
-             <li><a href="#">2015</a></li>
-             <li><a href="#">2014</a></li>
-             <li><a href="#">2013</a></li>
-             <li><a href="#">2012</a></li>
-             <li><a href="#">2011</a></li>
+             <li><a href="/2016/standings">2016</a></li>
+             <li><a href="/2015/standings">2015</a></li>
+             <li><a href="/2014/standings">2014</a></li>
+             <li><a href="/2013/standings">2013</a></li>
+             <li><a href="/2012/standings">2012</a></li>
+             <li><a href="/2011/standings">2011</a></li>
          </ul></li>
-            <li class="nav-item"><a href="#">Top Stats</a></li>
+            <li class="nav-item"><a href="/alltime">Top Stats</a></li>
      </ul>
      <ul class="nav navbar-nav">
-            <a href="/" class="" style="transform: scale(1);"><img style="border-radius:25%;"src="static/images/TDMPFFLnontrans2.png" class="logonav"></a>
+            <a href="/" class="" style="transform: scale(1);"><img style="border-radius:25%;"src="../static/images/TDMPFFLnontrans2.png" class="logonav"></a>
        </ul>
          <ul class="nav navbar-nav nav-item">
-     <li><a href="#">Champions</a></li>
-     <li><a href="#">Chicken Bowl</a></li>
-     <li class="nav-item"><a href="#">About Us</a></li>
+     <li><a href="/champions">Champions</a></li>
+     <li><a href="/chickenbowl">Chicken Bowl</a></li>
+     <li class="nav-item"><a href="/about">About Us</a></li>
        </ul>
  </div>
 </nav>
 
 
-
+{% block customstyle %}
+{% endblock %}
 
 {% block body %}
 

@@ -13,7 +13,6 @@ body {
     font-family: 'Candal', sans-serif;
 }
 
-
 #championspic {
     text-align: center;
     color: white;
@@ -42,4 +41,39 @@ body {
     &:after {
         clear: both;
     }
+}
+#center {
+    left: 17%;
+}
+
+.standings {
+    text-align: center;
+  table-layout: fixed;
+  white-space: nowrap;
+    margin-top: 150px;
+    width: 60%;
+}
+.standings td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+    font-size: 20px;
+}
+.standings th   {
+    font-size: 40px;
+    text-align: center;
+}
+/* Column widths are based on these cells */
+.row-team {
+  width: 20%;
+}
+.row-owner {
+  width: 20%;
+}
+
+.row-win {
+  width: 10%;
+}
+.row-loss {
+  width: 10%;
 }
