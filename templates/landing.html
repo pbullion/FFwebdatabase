@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Fantasy Stuff</title>
     <link rel="stylesheet" href="static/landing.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -26,7 +27,7 @@
                     <li class="active nav-item"><a href="#ModalLogin" data-toggle="modal" data-target="#ModalLogin">Login</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
-                    <a href="/" class="" style="transform: scale(1);"><img src="static/logos/fflogonav.png" class="logonav"></a>
+                    <a href="/" class="" style="transform: scale(1); "><img style="height: 172px; width: 160px;" src="static/logos/fflogo.png" class="logonav"></a>
                 </ul>
                 <ul class="nav navbar-nav nav-item">
                     <li><a href="#">Sign Up</a>
@@ -39,49 +40,48 @@
                 </ul>
             </div>
         </nav>
+        {% block body %}
 
-    <!--BEGGINING OF BODY -->
-    <div>
+<!--plays the video in the background -->
+<div>
         {% set video_id= range(1, 4)|random %}
         <video style="opacity:0.8" autoplay loop>
         <source src="static/landingpage{{ video_id }}.mp4" type="video/mp4">
-    </video>
-    {% block body %}
+        </video>
+
     <div class="opacity">
     </div>
     <div>
-        <p class="text">Week 16 top 5 by positions</p>
+        <!-- <p class="text">Week 16 top 5 by positions</p> -->
         <div class="container-fluid stat-text">
             <div class="row">
-                <div class="col-md-12 top5">
-                    <h1>Quarterback</h1>
-                    <ol >
+                <div class="col-md-12">
+                    <h1 class="top5">Quarterback</h1>
                         {% for p in quarterback_result %}
                         <li>{{p}}</li>
-                        {% endfor %}</ol>
+                        {% endfor %}
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-xs-12 top5">
-                    <h1>Receiving</h1></th>
-                    <ol>
+                <div class="col-md-5 col-xs-12">
+                    <h1 class="top5">Receiving</h1></th>
                         {% for p in receiving_result %}
                         <li>{{p}}</li>
                         {% endfor %}
-                    </ol>
                 </div>
-                <div class="col-md-6 col-xs-12 top5">
-                    <h1 class=>Running Backs</h1>
-                    <ol>
+                <div class="col-md-2 col-xs-12">
+                    <h1 class="top5">Week 16</h1>
+                </div>
+                <div class="col-md-5 col-xs-12 top5">
+                    <h1 class="top5">Running Backs</h1>
                         {% for p in rushing_results %}
                         <li>{{p}}</li>
                         {% endfor %}
-                    </ol>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+</div>
     {% endblock %}
 
 

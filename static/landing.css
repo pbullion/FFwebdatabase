@@ -8,18 +8,14 @@ video {
 	z-index:-100;
 	visibility: visible;
 }
-p.text{
+/*p.text{
     position: relative;
     top: 300px;
     text-align: center;
 	color: #fff;
-	font-size: 3.5em;
+	font-size: 36px;
+}*/
 
-}
-.stat-text {
-    font-size: .55em;
-    color: orange;
-}
 .opacity    {
     position: absolute;
     background-color: black;
@@ -31,46 +27,11 @@ p.text{
 	height:auto;
 	z-index:-100;
 	visibility: visible;
-
 }
-/*.video-overlay {
-    margin: 200px  !important;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    margin: 10px;
-    padding: 5px 5px;
-    font-size: 50px;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-    color: white;
-}
-.inner-container {
-    border: 1px dotted black;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    /*opacity:0.8;
-}
-
-/*#video  {
-    margin-top: 25px;
-    background: black;
-    background-blend-mode: darken, lighten;
-    width: 100%;
-    height: 50%;
-    opacity: 0.5;
-
-}*/
-
-/*.inner-container {
-    display: inline-block;
-    position: relative;
-}*/
 
 body {
     text-align: center;
 }
-
 
 .logonav:hover {
     cursor:default;
@@ -87,7 +48,6 @@ body {
 {
     position: relative;
     display: inline-block;
-    font-size: 14px;
 }
 
 .nav-item:
@@ -101,6 +61,7 @@ body {
     padding: 15px 20px;
     color: black;
     text-align: center;
+	font-size: 14px;
 }
 
 .nav-item a:hover,{
@@ -109,7 +70,7 @@ body {
 }
 
 ul.sub-menu {
-    visibility: hidden;
+    display: none;
     padding-left: 0px;
     background: white;
 	list-style: none;
@@ -121,7 +82,7 @@ ul.sub-menu {
 }
 
 .nav-item:hover .sub-menu {
-visibility:visible;
+	display: block;
 }
 a, a:hover{
     text-decoration: none;
@@ -130,18 +91,23 @@ a, a:hover{
 }
 .top5 {
 
-	/*position: relative;*/
-    top: 350px;
-	color: white;
-	font-size: 1.5em;
-	text-align: center; list-style-position:inside;}
-
-
+	color: orange;
+	font-size: 26px;
+	text-align: center; list-style-position:inside;
 
 }
-/*ul, ol {
+
+margin-top: 200px;
+.stat-text{
+}
+li {
+	color: white;
+	font-size: 22px;
+}
+
+ul, li {
     list-style: none;
-}*/
+}
 
 /*#bodyOpacity {
     background: black;
