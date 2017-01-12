@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block customstyle %}
+<link rel="stylesheet" href="/static/css/standings.css">
+{% endblock %}
+
+{% block body_top %}
+{%  endblock %}
+
+{% block body %}
+<p>
+     <a href="/2011/standings">2011</a>&nbsp;&nbsp;&nbsp;
+     <a href="/2012/standings">2012</a>&nbsp;&nbsp;&nbsp;
+     <a href="/2013/standings">2013</a>&nbsp;&nbsp;&nbsp;
+     <a href="/2014/standings">2014</a>&nbsp;&nbsp;&nbsp;
+     <a href="/2015/standings">2015</a>&nbsp;&nbsp;&nbsp;
+     <a href="/2016/standings">2016</a>
+</p>
+<table>
+
+    <tr>
+        <th>Team</th>
+        <th>Owner</th>
+        <th>Points for</th>
+        <th>Win</th>
+        <th>Loss</th>
+    </tr>
+    {% for owner in result_list %}
+    <tr>
+        <td>{{ owner.team }}</td>
+        <td>{{ owner.owner }}</td>
+        <td>{{ owner.points_for }}</td>
+        <td>{{ owner.wins }}</td>
+        <td>{{ owner.loss }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block customstyle %}
+<link rel="stylesheet" href="/static/css/owners.css">
+{% endblock %}
+
+{% block body_top %}
+
+<h1>{{title}}</h1>
+{% endblock %}
+
+{% block body %}
+
+
+<table>
+    {% for teams in result_list %}
+    <tr>
+        <td><a href="{{teams.idowners}}/teamnames">{{ teams.name }}</a></td>
+        <td>{{ teams.yearstarted }}</td>
+        <td>{{ teams.yearended }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+
+{% endblock %}
+
+

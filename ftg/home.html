@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block customstyle %}
+    <link rel="stylesheet" href="/static/css/landing.css">
+{% endblock %}
+
+
+{% block body %}
+
+
+<div>
+    <video style="opacity:0.8" autoplay loop>
+        <source src="static/tdmpfflweb.mp4" type="video/mp4">
+    </video>
+    <div class="opacity">
+    </div>
+    <div class="text">
+        <h1>Touchdown My Pants</h1>
+        <h1>Fantasy Football League</h1>
+    </div>
+        <div class="container-fluid logopadding">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img id="logobig" src="/static/images/TDMPFFLwhite.png">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-xs-12" id="scores">
+                    <h3>Top Scores</h3>
+                        <table>
+                            {% for teams in top_list %}
+                            <tr>
+                                <td>{{ teams.teamone }}</td>
+                                <td>{{ teams.teamonescore }}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                </div>
+                <div class="col-sm-6 col-xs-12" id="scores">
+                    <h3>Lowest Scores</h3>
+                       <table>
+                            {% for teams in low_list %}
+                            <tr>
+                                <td>{{ teams.teamone }}</td>
+                                <td>{{ teams.teamonescore }}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                </div>
+            </div>
+        </div>
+</div>
+
+{% endblock %}
+
