@@ -8,8 +8,9 @@
 
 
 <div>
+    {% set video_id= range(1, 4)|random %}
     <video style="opacity:0.8" autoplay loop>
-        <source src="static/tdmpfflvideo2.mp4" type="video/mp4">
+        <source src="static/tdmpfflvideo{{ video_id }}.mp4" type="video/mp4">
     </video>
     <div class="opacity">
     </div>
