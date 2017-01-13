@@ -6,6 +6,13 @@
 
 
 {% block body %}
+    <div>
+    {% set video_id= range(1, 6)|random %}
+    <video style="opacity:0.8" autoplay loop>
+        <source src="/../static/tdmpfflvideo{{ video_id }}.mp4" type="video/mp4">
+    </video>
+    <div class="opacity">
+    </div>
     <div class="container-fluid">
         <div class="col-xs-12" id="history">
             <h1>{{ title }}</h1>
@@ -36,6 +43,7 @@
                 <!-- <br> <p>*fagit
             – someone who is terrible at pretend sports</p> -->
         </div>
+    </div>
     </div>
 {% endblock %}
 

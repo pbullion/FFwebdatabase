@@ -10,17 +10,38 @@
 {% endblock %}
 
 {% block body %}
+<div>
+    {% set video_id= range(1, 6)|random %}
+    <video style="opacity:0.8" autoplay loop>
+        <source src="/static/tdmpfflvideo{{ video_id }}.mp4" type="video/mp4">
+    </video>
+    <div class="opacity">
+    </div>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-xs-12 members">
+        <table>
+    <tr>
+    <th class="tableheader">Member</th>
+    <th class="tableheader">Start</th>
+    <th class="tableheader">End</th>
+    </tr>
+                {% for teams in result_list %}
 
-
-<table>
-    {% for teams in result_list %}
-    <tr class="members">
-        <td><a href="{{teams.idowners}}/teamnames">{{ teams.name }}</a></td>
-        <td>{{ teams.yearstarted }}</td>
-        <td>{{ teams.yearended }}</td>
+    <tr class="standings">
+        <td class="row-team"><a href="{{teams.idowners}}/teamnames">{{ teams.name }}</a></td>
+        <td class="row-yearstart">{{ teams.yearstarted }}</td>
+        <td class="row-yearend">{{ teams.yearended }}</td>
     </tr>
     {% endfor %}
 </table>
+
+
+    </div>
+</div>
+</div>
+</div>
+
 
 
 

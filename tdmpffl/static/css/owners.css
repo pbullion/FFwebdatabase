@@ -21,9 +21,42 @@ h1  {
     font-size: 40px;
     margin-bottom: 20px;
 }
+.tableheader    {
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+table    {
+    margin-top: 110px;
 
+}
 .members    {
-    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.standings {
+    text-align: center;
+  table-layout: fixed;
+  white-space: nowrap;
+    width: 100%;
+    color: white;
+}
+.standings td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+    font-size: 25px;
+}
 
+/* Column widths are based on these cells */
+.row-team {
+  width: 50%;
+}
+.row-teamstart {
+  width: 25%;
+}
+.row-teamend {
+  width: 25%;
+}

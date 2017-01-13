@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block customstyle %}
-<link rel="stylesheet" href="/static/css/owners.css">
+<link rel="stylesheet" href="../static/css/owners.css">
 {% endblock %}
 
 {% block body_top %}
@@ -11,17 +11,36 @@
 {% endblock %}
 
 {% block body %}
-
-    <table>
-    {% for owner in team_names %}
+<div>
+    {% set video_id= range(1, 6)|random %}
+    <video style="opacity:0.8" autoplay loop>
+        <source src="/../static/tdmpfflvideo{{ video_id }}.mp4" type="video/mp4">
+    </video>
+    <div class="opacity">
+    </div>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-xs-12 members" style="margin-top: 100px;">
+        <table>
     <tr>
-        <td>{{ owner.teamname }}</td>
-        <td>{{ owner.yearstarted }}</td>
-        <td>{{ owner.yearended }}</td>
+    <th class="tableheader">Team</th>
+    <th class="tableheader">Start</th>
+    <th class="tableheader">End</th>
+    </tr>
+                {% for owner in team_names %}
+    <tr class="standings">
+        <td class="row-team">{{ owner.teamname }}</td>
+        <td class="row-yearstart">{{ owner.yearstarted }}</td>
+        <td class="row-yearend">{{ owner.yearended }}</td>
     </tr>
     {% endfor %}
 </table>
 
+
+    </div>
+</div>
+</div>
+</div>
 
 
 {% endblock %}
