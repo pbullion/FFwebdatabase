@@ -10,18 +10,38 @@
 {% endblock %}
 
 {% block body %}
+    <div>
+    {% set video_id= range(1, 6)|random %}
+    <video style="opacity:0.8" autoplay loop>
+        <source src="../static/tdmpfflvideo{{ video_id }}.mp4" type="video/mp4">
+    </video>
+    <div class="opacity">
+    </div>
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12" id="center">
 
-    <table>
+    <table style="margin-top: 125px;" class="standings">
+
+    <tr>
+        <th class="row-1 row-owner">Member</th>
+        <th class="row-2 row-win">Win</th>
+        <th class="row-3 row-loss">Loss</th>
+        <th class="row-4 row-percent">%</th>
+    </tr>
     {% for owner in result_list %}
     <tr>
-        <td><a href="{{owner.idowners}}/teamnames">{{ owner.owner }}</a></td>
+        <td>{{ owner.owner }}</td>
         <td>{{ owner.wins }}</td>
         <td>{{ owner.loss }}</td>
         <td>{{ owner.percent }}</td>
     </tr>
     {% endfor %}
+
 </table>
+</div>
+</div>
+</div>
+</div>
 
 {% endblock %}
-
-

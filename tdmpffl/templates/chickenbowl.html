@@ -6,10 +6,15 @@
 
 
 {% block body %}
+    <div>
+    {% set video_id= range(1, 6)|random %}
+    <video style="opacity:0.8" autoplay loop>
+        <source src="/static/tdmpfflvideo{{ video_id }}.mp4" type="video/mp4">
+    </video>
+    <div class="opacity">
+    </div>
 <div class="container-fluid">
-        <div class="col-xs-12" id="chickenbowlheader">
-            <h1>{{ title }}</h1>
-        </div>
+        <div style="margin-top: 100px;" class="row">
         <div class="col-xs-12 col-sm-6" id="chickenbowlpic">
             <img id="chickenbowlpicdoug" src="/static/images/chickenbowl/dougspraytan.jpeg" alt="doug spray tan">
             <h1>Charles Sartin III</h1>
@@ -23,7 +28,7 @@
             <h4>"drag on 6th street"</h4>
 
         </div>
-
+</div>
     </div>
 
 {% endblock %}

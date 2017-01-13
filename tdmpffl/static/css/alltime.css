@@ -22,10 +22,40 @@ h1  {
     margin-bottom: 20px;
 }
 
-
-ol  {
-    color: white;
-    font-size: 25px;
-    list-style: none;
+#center {
+    left: 17%;
 }
 
+.standings {
+    text-align: center;
+  table-layout: fixed;
+  white-space: nowrap;
+    margin-top: 125px;
+    width: 60%;
+}
+.standings td {
+    color:white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+    font-size: 22px;
+}
+.standings th   {
+    color:white;
+    font-size: 40px;
+    text-align: center;
+}
+/* Column widths are based on these cells */
+.row-owner {
+  width: 50%;
+}
+.row-win {
+  width: 15%;
+}
+
+.row-loss {
+  width: 15%;
+}
+.row-percent {
+  width: 20%;
+}
