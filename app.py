@@ -54,7 +54,11 @@ def charge():
 
 @app.route('/ownersftg')
 def ownersftg():
-    return render_template('ownersftg.html')
+    return render_template("ownersftg.html")
+
+@app.route('/homeftg')
+def homeftg():
+    return render_template("landing.html")
 
 @app.route("/teamnamesftg")
 def teamnamesftg(idowners):
