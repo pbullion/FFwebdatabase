@@ -8,10 +8,17 @@ body {
     text-align: center;
     color: white;
     padding-bottom: 30px;
-    font-size: 60px;
+    font-size: 40px;
     font-family: 'Candal', sans-serif;
 }
 
+h1  {
+    font-size: 25px;
+    font-family: 'Candal', sans-serif;
+}
+h2  {
+    margin-top: -10px;
+}
 
 #championspic {
     text-align: center;
