@@ -191,8 +191,8 @@
 // onload
 if(document.body.clientWidth >= 775) {
     console.log("set autoplay true");
-    $('video').attr('autoplay', true);
-    $('video').attr('loop', true);
+    $('video').get(0).play();
+    $('video').attr('loop','loop');
 }
 
 // If you want to autoplay when the window is resized wider than 780px
@@ -201,8 +201,8 @@ if(document.body.clientWidth >= 775) {
 $(window).resize(function() {
     console.log("resize set autoplay true");
     if(document.body.clientWidth >= 776) {
-        $('video').attr('autoplay', true);
-        $('video').attr('loop', true);
+        $('video').get(0).play();
+        $('video').attr('loop','loop');
     }
 });
 });
