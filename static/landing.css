@@ -1,3 +1,10 @@
+@font-face {
+	src: url('https://fonts.googleapis.com/css?family=Arimo');
+	src: url('https://fonts.googleapis.com/css?family=Holtwood+One+SC');
+
+}
+
+
 video {
 	position:absolute;
     left:0;top:0;
@@ -31,6 +38,7 @@ video {
 
 body {
     text-align: center;
+	font-family: 'Arimo', sans-serif;
 }
 
 .logonav:hover {
@@ -90,17 +98,29 @@ a, a:hover{
     background-color: #0285C9;
 }
 .top5 {
-
-	color: orange;
+	font-family: 'Holtwood One SC', serif;
+	color: #0285C9;
 	font-size: 26px;
-	text-align: center; list-style-position:inside;
+	text-align: center;
+	font-style: italic;
+}
+
+.top {
+	font-family: 'Holtwood One SC', serif;
+	color: #0285C9;
+	font-size: 40px;
+	font-style: italic;
+	text-align: center;
+	text-decoration: underline;
 
 }
+
+.stat-text{
 
 margin-top: 200px;
-.stat-text{
 }
-li {
+
+.main-text {
 	color: white;
 	font-size: 22px;
 }

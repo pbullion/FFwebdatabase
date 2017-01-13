@@ -26,6 +26,10 @@ def home():
     quarterback_result = Weeklystats.passing()
     return render_template("landing.html",receiving_result=receiving_result,rushing_results=rushing_results,quarterback_result=quarterback_result)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/premium')
 def premium():
     return render_template('premium.html', key=stripe_keys['publishable_key'])
