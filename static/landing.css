@@ -94,7 +94,7 @@ ul.sub-menu {
 .nav-item:hover .sub-menu {
 	display: block;
 }
-a, a:hover{
+ a:hover{
     text-decoration: none;
     color: white;
     background-color: #0285C9;
@@ -169,20 +169,24 @@ ul, li {
 
 @media only screen and (max-width: 775px) {
     /* For mobile phones: */
-	.video {
-		display: none;
-	}
-	.opacity {
-		display: none;
-	}
 	body {
 		background-image: url("/static/mobilebackground1.jpg");
+
 	}
+	video {
+		display: none !important;
+	}
+
 	.navbar {
 		display: none;
 	}
 	.menu-bar:img {
 		display: inline;
+		align-items: center;
+	}
+	.menu-bar:img:hover {
+		display: inline;
+		background: white;
 	}
 	.menu-bar {
 		/*padding-top: 450px;*/
@@ -192,6 +196,11 @@ ul, li {
 	    left: 50%;
 	    height: 14px;
 	    margin-left: -10px;
+	}
+
+	.row {
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 	.menu {
 	    display: none;
@@ -204,6 +213,10 @@ ul, li {
 	}
 	.menu ul {
 	    margin-bottom: 0;
+		padding: 0px;
+	}
+	ul {
+		padding-left: 0px;
 	}
 	.menu a {
 	    color: #333;
@@ -213,5 +226,7 @@ ul, li {
 	.menu a:hover {
 	    text-decoration: none;
 	    opacity: 1;
+		background-color: white;
 	}
+
 }
