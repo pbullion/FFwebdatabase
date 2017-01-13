@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="static/logos/10831-american-football.ico" type="image/x-icon">
+
 </head>
 
 <body>
@@ -24,7 +25,7 @@
         {% endif %}
 
                 <div class="nav">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav list-inline">
                     <li class="nav-item"><a href="#">Leagues</a>
                         <ul class="sub-menu ">
                             <li><a href="/tdmpffl/templates/home.html">TDMPFFL</a></li>
@@ -52,12 +53,35 @@
                 </ul>
             </div>
         </nav>
+<!-- this is the "hamburger menu" -->
+<div class="hb">
+<a class="menu-bar" data-toggle="collapse" href="#menu"><img src="/static/logos/fflogonav.png" /></a>
+<ul>
+    <div class="collapse menu" id="menu">
 
-
+            <ul class="nav navbar-nav">
+            <li class="nav-item"><a href="#">Leagues</a>
+                <ul class="sub-menu ">
+                    <li><a href="/tdmpffl/templates/home.html">TDMPFFL</a></li>
+                    <li><a href="homeftg">For The Girls</a></li>
+                </ul>
+            </li>
+            {% if session["loggedin"] %}
+            <li class="active nav-item"><a href="/logout">Logout</a></li>
+            {% else %}
+            <li class="active nav-item"><a href="login">Login</a></li>
+            {% endif %}
+        </ul>
+            <li><a href="premium">Sign Up</a>
+            </li>
+            <li class="nav-item"><a href="about">About</a></li>
+        </ul>
+    </div>
+</div>
 <!--plays the video in the background -->
 <div class="bodyblock">
         {% set video_id= range(1, 4)|random %}
-        <video style="opacity:0.8" autoplay loop>
+        <video style="opacity:0.8" >
         <source src="static/landingpage{{ video_id }}.mp4" type="video/mp4">
         </video>
 
@@ -84,7 +108,7 @@
                         <li class="main-text">{{p}}</li>
                         {% endfor %}
                 </div>
-                <div class="col-md-2 col-xs-12">
+                <div class="col-md-2 col-xs-12 week">
                         <br /><br /><br /><h1 class="top">Week 16</h1>
                 </div>
                 <div class="col-md-5 col-xs-12">
@@ -161,5 +185,28 @@
 
 
 </body>
+
+<script type="text/javascript"> $(function() {
+
+// onload
+if(document.body.clientWidth >= 775) {
+    console.log("set autoplay true");
+    $('video').attr('autoplay', true);
+    $('video').attr('loop', true);
+}
+
+// If you want to autoplay when the window is resized wider than 780px
+// after load, you can add this:
+
+$(window).resize(function() {
+    console.log("resize set autoplay true");
+    if(document.body.clientWidth >= 776) {
+        $('video').attr('autoplay', true);
+        $('video').attr('loop', true);
+    }
+});
+});
+</script>
+
 
 </html>
