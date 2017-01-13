@@ -9,13 +9,6 @@ import os
 import nflgame
 
 
-DBUSER=os.environ.get('DBUSER', True)
-DBPASS=os.environ.get('DBPASS', True)
-DBHOST=os.environ.get('DBHOST', True)
-DBNAME=os.environ.get('DBNAME', True)
-
-db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
-
 # class Database(object):
 #     @staticmethod
 #     def getConnection():

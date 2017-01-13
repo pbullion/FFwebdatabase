@@ -11,18 +11,15 @@
 from flask import Flask, render_template, request, redirect, url_for
 from tdmpfflClass import *
 import sys
+from config import *
 
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-app = Flask("MyApp")
+app = Flask(__name__)
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'this_should_be_configured')
 
-DBUSER=os.environ.get('DBUSER', True)
-DBPASS=os.environ.get('DBPASS', True)
-DBHOST=os.environ.get('DBHOST', True)
-DBNAME=os.environ.get('DBNAME', True)
 
 ###
 # Routing for your application.
