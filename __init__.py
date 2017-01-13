@@ -3,16 +3,11 @@ import pg
 from flask import Flask, render_template, request, redirect, url_for, session
 from fantasyclass import *
 import stripe
-
+from config import *
 
 import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
-
-DBUSER='postgres'
-DBPASS='daley'
-DBHOST='127.0.0.1'
-DBNAME='fantasychamps'
 
 # stripe_keys = {
 #   'secret_key': os.environ['SECRET_KEY'],
