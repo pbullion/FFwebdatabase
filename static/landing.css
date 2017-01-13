@@ -19,13 +19,7 @@ video {
 	z-index:-100;
 	visibility: visible;
 }
-/*p.text{
-    position: relative;
-    top: 300px;
-    text-align: center;
-	color: #fff;
-	font-size: 36px;
-}*/
+
 
 .opacity    {
     position: absolute;
@@ -105,6 +99,13 @@ a, a:hover{
     color: white;
     background-color: #0285C9;
 }
+
+
+
+.bodyblock {
+	padding-top: 250px;
+	font-size: 22px;
+}
 .top5 {
 	font-family: 'Holtwood One SC', serif;
 	color: #0285C9;
@@ -123,14 +124,10 @@ a, a:hover{
 
 }
 
-.stat-text{
-
-margin-top: 200px;
-}
-
 .main-text {
 	color: white;
 	font-size: 22px;
+	align-items: center;
 }
 
 ul, li {

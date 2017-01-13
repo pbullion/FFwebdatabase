@@ -26,12 +26,10 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'herro')
 
 @app.route('/')
 def home():
+    print(session)
     receiving_result = Weeklystats.receiving()
     rushing_results = Weeklystats.rushing()
     quarterback_result = Weeklystats.passing()
-
-
-
     return render_template("landing.html",receiving_result=receiving_result,rushing_results=rushing_results,quarterback_result=quarterback_result,session=session)
 
 @app.route('/submitlogin', methods=['POST', 'GET'])
@@ -51,13 +49,15 @@ def submitlogin():
            session['firstname'] = user.firstname
            session['lastname'] = user.lastname
            session['loggedin'] = True
-           return redirect('landing.html')
+           return redirect('/')
        else:
            #found user but wrong password
-           return redirect('/login',message="Invalid username or password")
+           message="Invalid username or password"
+           return render_template('login.html',message=message)
    else:
        #invalid username (or password)
-       redirect('/login',message="Invalid username or password")
+       message="Invalid username or password"
+       return render_template('login.html',message=message)
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -73,6 +73,24 @@ def register():
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html',message=message)
+
+@app.route('/logout')
+def logout():
+    print("about to logout")
+    if session.get('loggedin'):
+        session['loggedin']=False
+    if session.get('firstname'):
+        del session['firstname']
+    if session.get('lastname'):
+        del session['lastname']
+    if session.get('username'):
+        del session['username']
+    print session
+    return redirect('/')
 
 @app.route('/premium')
 def premium():
@@ -102,17 +120,12 @@ def ownersftg():
 
 @app.route('/homeftg')
 def homeftg():
-    loggedin = False
-    try:
-        session['username']
-        loggedin = True
-    except:
-        loggedin = False
-    return render_template(
-        '/testing.html',
-        loggedin = loggedin
-        )
-    return render_template("landing.html")
+    if session['loggedin'] == True:
+        top_list = Owners.topscores()
+        low_list = Owners.lowscores()
+        return render_template("homeftg.html",top_list=top_list,low_list=low_list)
+    else:
+        return render_template("login.html", message=" Please log in to continue:")
 
 @app.route("/teamnamesftg")
 def teamnamesftg(idowners):

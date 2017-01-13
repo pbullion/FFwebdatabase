@@ -33,7 +33,7 @@
                         </ul>
                     </li>
                     {% if session["loggedin"] %}
-                    <li class="active nav-item"><a href="#ModalLogin" data-toggle="modal" data-target="#ModalLogin">Logout</a></li>
+                    <li class="active nav-item"><a href="/logout">Logout</a></li>
                     {% else %}
                     <li class="active nav-item"><a href="#ModalLogin" data-toggle="modal" data-target="#ModalLogin">Login</a></li>
                     {% endif %}
@@ -55,7 +55,7 @@
 
 
 <!--plays the video in the background -->
-<div>
+<div class="bodyblock">
         {% set video_id= range(1, 4)|random %}
         <video style="opacity:0.8" autoplay loop>
         <source src="static/landingpage{{ video_id }}.mp4" type="video/mp4">

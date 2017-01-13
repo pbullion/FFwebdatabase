@@ -1,6 +1,27 @@
 {% extends "landing.html" %}
 
 {% block body %}
+<h1> Please Register below for the Premium Addess:
+</h1>
+
+<form action="/register" method="POST">
+    <p>
+   <label for="firstname">First Name: &nbsp;</label><input type="text" name="firstname">
+   &nbsp; &nbsp; &nbsp;
+   <label for="lastname">Last Name: &nbsp;</label><input type="text" name="lastname"><br /><br />
+  <label for="username">Username:&nbsp; </label> <input type="text" name="username">
+   &nbsp; &nbsp; &nbsp;
+   <label for="password">Password:&nbsp; </label><input type="password" name="password"><br /><br />
+    <label for="leaguesite">League Site: (ie NFL.com, ESPN, Yahoo) &nbsp;</label><br>
+    <input type="text" name="leaguesite"><br /><br />
+    <label for="leagueid">League Id: &nbsp;</label><input type="text" name="leagueID">
+    &nbsp; &nbsp; &nbsp;
+    <label for="leaguename">League Name: &nbsp;</label><input type="text" name="leaguename">
+    <p>
+      <button type="submit">Register </button>
+    </p>
+</form>
+
 <form action="/charge" method="post">
     <article>
       <label>

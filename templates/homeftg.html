@@ -2,10 +2,10 @@
 
 {% block body %}
         <div class="container-fluid bodypadding">
-            <div class="row top5">
+            <div class="row">
                 <div class="col-sm-6 col-xs-12">
-                    <h3>Season<br>Top Scores</h3>
-                            <table class="standings">
+                    <h3 class="top5">Season<br>Top Scores</h3>
+                            <table class="main-text standings">
                             {% for teams in top_list %}
                             <tr>
                                 <td class="row-team">{{ teams.teamone }}</td>
@@ -16,8 +16,8 @@
                 </div>
 
                 <div class="col-sm-6 col-xs-12">
-                    <h3>Season<br>Lowest Scores</h3>
-                            <table class="standings">
+                    <h3 class="top5">Season<br>Lowest Scores</h3>
+                            <table class="main-text standings">
                             {% for teams in low_list %}
                             <tr>
                                 <td class="row-team">{{ teams.teamone }}</td>

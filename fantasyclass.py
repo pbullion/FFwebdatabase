@@ -68,7 +68,7 @@ class Teams(object):
 
     @staticmethod
     def get_team_list(idowners):
-        db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
+        # db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
         query = db.query("SELECT * FROM teamnames where idowners='%s' order by yearstarted asc" % idowners)
         result_list = query.namedresult()
         db.close()
@@ -80,7 +80,6 @@ class Owners(object):
         self.yearstarted = 0
         self.yearended = 0
         self.idowners = 0
-
     @staticmethod
     def getOwners():
         db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
@@ -89,13 +88,44 @@ class Owners(object):
         db.close()
         print result_list
         return result_list
-
+    @staticmethod
+    def alltime():
+        db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
+        query = db.query("SELECT owner,sum(wins) wins,sum(loss) loss,idowners,ROUND(sum(wins)*1.0/sum(wins+loss)::numeric,4) percent from winloss group by owner,idowners order by percent desc")
+        result_list = query.namedresult()
+        db.close()
+        return result_list
     @staticmethod
     def standings(year):
         year = year
         db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
         db.debug = True
-        query = db.query("select team,owner,sum(wins) wins,sum(loss) loss,idowners from winloss where year ='%s' group by team,owner,idowners order by sum(wins) desc" % year)
+        query = db.query("SELECT team,owner,sum(wins) wins,sum(loss) loss,idowners from winloss where year ='%s' group by team,owner,idowners order by sum(wins) desc" % year)
         result_list = query.namedresult()
         db.close()
         return result_list
+    @staticmethod
+    def topscores():
+        db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
+        db.debug = True
+        query = db.query("SELECT year,week,teamone,teamonescore from schedule team1 where year=2016 union select year,week,teamtwo,teamtwoscore from schedule team1 where year=2016 order by 4 desc limit 5")
+        result_list = query.namedresult()
+        db.close()
+        return result_list
+    @staticmethod
+    def lowscores():
+        db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
+        db.debug = True
+        query = db.query(
+            "SELECT year,week,teamone,teamonescore from schedule team1 where year=2016 union select year,week,teamtwo,teamtwoscore from schedule team1 where year=2016 order by 4 asc limit 5")
+        result_list = query.namedresult()
+        db.close()
+        return result_list
+
+#   @staticmethod
+    # def owneryears(idowners):
+    #     db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
+    #     query = db.query("select 'year',sum(wins) wins,sum(loss) loss,idowners from winloss where idowners='%d' group by 'year',idowners order by year asc" % idowners)
+    #     result_list = query.namedresult()
+    #     db.close()
+    #     return result_list
