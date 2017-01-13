@@ -1,12 +1,34 @@
 import nflgame
+import os
+import pg
 
-# receivers = []
-# for item in receiving_result:
-#     receivers.append(Weeklystats())
+DBUSER='postgres'
+DBPASS='daley'
+DBHOST='127.0.0.1'
+DBNAME='fantasychamps'
 
+db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
+
+
+class Login:
+    def __init__(self, username):
+        self.username = username
+        self.password = password
+        query = "SELECT username, password FROM userinfo where username= '%s'" % username
+        result_set= Database.getResult(query, True)
+
+    def login(self,password):
+        if result_list and len(result_list) > 0:
+            user = result_list[0]
+            if password == user.password:
+                #successfully logged in
+                session['username'] = user.username
+        return loginsuccess
+
+    def logout(self):
+        del session['username']
 
 class Weeklystats():
-
     @staticmethod
     def passing():
         games = nflgame.games(2016, week=16)

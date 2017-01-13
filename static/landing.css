@@ -4,6 +4,10 @@
 
 }
 
+.welcome {
+	padding-top: 15px;
+	padding-left: 5px;
+}
 
 video {
 	position:absolute;
@@ -75,6 +79,10 @@ body {
 .nav-item a:hover,{
     color:white;
     text-decoration: none;
+}
+
+.nav >li {
+	width: 150px !important;
 }
 
 ul.sub-menu {

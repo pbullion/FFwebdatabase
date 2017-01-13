@@ -17,8 +17,14 @@
 
 <body>
     <nav class="navbar navbar-fixed-top">
-            <div class="nav">
-                <ul class="nav navbar-nav">
+        {% if session["loggedin"] %}
+        <div class="pull-left welcome">
+            <p>Welcome  {{session['firstname']}}</p>
+        </div>
+        {% endif %}
+
+                <div class="nav">
+                    <ul class="nav navbar-nav">
                     <li class="nav-item"><a href="#">Leagues</a>
                         <ul class="sub-menu ">
                             <li><a href="/tdmpffl/templates/home.html">TDMPFFL</a></li>
@@ -26,7 +32,11 @@
                             <li><a href="#">Wild Peach HQ</a></li>
                         </ul>
                     </li>
+                    {% if session["loggedin"] %}
+                    <li class="active nav-item"><a href="#ModalLogin" data-toggle="modal" data-target="#ModalLogin">Logout</a></li>
+                    {% else %}
                     <li class="active nav-item"><a href="#ModalLogin" data-toggle="modal" data-target="#ModalLogin">Login</a></li>
+                    {% endif %}
                 </ul>
                 <ul class="nav navbar-nav">
                     <a href="/" class="" style="transform: scale(1); "><img style="height: 172px; width: 160px;" src="static/logos/fflogo.png" class="logonav"></a>

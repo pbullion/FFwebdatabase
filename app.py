@@ -1,4 +1,4 @@
-import os
+import os, sys
 import pg
 from flask import Flask, render_template, request, redirect, url_for, session
 from fantasyclass import *
@@ -9,6 +9,11 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
+DBUSER='postgres'
+DBPASS='daley'
+DBHOST='127.0.0.1'
+DBNAME='fantasychamps'
+
 # stripe_keys = {
 #   'secret_key': os.environ['SECRET_KEY'],
 #   'publishable_key': os.environ['PUBLISHABLE_KEY']
@@ -17,14 +22,53 @@ sys.setdefaultencoding('utf8')
 # stripe.api_key = stripe_keys['secret_key']
 
 app = Flask(__name__)
-app.secret_key = "herro"
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'herro')
 
 @app.route('/')
 def home():
     receiving_result = Weeklystats.receiving()
     rushing_results = Weeklystats.rushing()
     quarterback_result = Weeklystats.passing()
-    return render_template("landing.html",receiving_result=receiving_result,rushing_results=rushing_results,quarterback_result=quarterback_result)
+
+
+
+    return render_template("landing.html",receiving_result=receiving_result,rushing_results=rushing_results,quarterback_result=quarterback_result,session=session)
+
+@app.route('/submitlogin', methods=['POST', 'GET'])
+def submitlogin():
+   session['loggedin'] = False
+   username = request.form.get('username')
+   password = request.form.get('password')
+   query = db.query("SELECT * FROM userinfo WHERE username = '%s'" % username)
+   results = query.namedresult()
+   # if we find a user with the username
+   if len(results) > 0:
+       user = results[0]
+
+       #if the password matches
+       if user.password == password:
+           session['username'] = username
+           session['firstname'] = user.firstname
+           session['lastname'] = user.lastname
+           session['loggedin'] = True
+           return redirect('landing.html')
+       else:
+           #found user but wrong password
+           return redirect('/login',message="Invalid username or password")
+   else:
+       #invalid username (or password)
+       redirect('/login',message="Invalid username or password")
+
+@app.route('/register', methods=['POST'])
+def register():
+   username = request.form.get('username')
+   password = request.form.get('password')
+   firstname = request.form.get('firstname')
+   lastname = request.form.get('lastname')
+   q = "INSERT INTO userinfo (firstname, lastname, username, password) values ('%s','%s','%s','%s')" % (firstname, lastname, username, password)
+   query = db.query(q)
+   session['username'] = username
+   return render_template('success.html')
 
 @app.route('/about')
 def about():
@@ -58,6 +102,16 @@ def ownersftg():
 
 @app.route('/homeftg')
 def homeftg():
+    loggedin = False
+    try:
+        session['username']
+        loggedin = True
+    except:
+        loggedin = False
+    return render_template(
+        '/testing.html',
+        loggedin = loggedin
+        )
     return render_template("landing.html")
 
 @app.route("/teamnamesftg")
