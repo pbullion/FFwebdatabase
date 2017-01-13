@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<ul>
+
+    {% for owner in result_list %}
+
+    <li>{{ owner.year }}&nbsp;&nbsp;{{ owner.wins }}&nbsp;-&nbsp;{{ owner.loss }}
+
+    </li>
+
+    {% endfor %}
+
+</ul>
+
+{% endblock %}

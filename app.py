@@ -1,7 +1,7 @@
 import os
 import pg
 from flask import Flask, render_template, request, redirect, url_for, session
-from weeklystats import *
+from fantasyclass import *
 import stripe
 
 
@@ -42,7 +42,7 @@ def charge():
         email='customer@example.com',
         source=request.form['stripeToken']
     )
-    # only uncomment if you want to actually charge someone
+    #  uncomment when site is ready to accept charges :)
     # charge = stripe.Charge.create(
     #     customer=customer.id,
     #     amount=amount,
@@ -52,8 +52,20 @@ def charge():
 
     return render_template('charge.html',key=stripe_keys['publishable_key'], amount=amount)
 
+@app.route('/ownersftg')
+def ownersftg():
+    return render_template('ownersftg.html')
 
+@app.route("/teamnamesftg")
+def teamnamesftg(idowners):
+    idowners = idowners
+    result_list = Teams.get_team_list(idowners)
+    return render_template("teamnamesftg.html",team_names=result_list,title="All Teams for")
 
+@app.route("/membersftg")
+def membersftg():
+    result_list = Owners.getOwners()
+    return render_template("ownersftg.html",result_list=result_list,title="Members of For the Girls")
 
 if __name__ == "__main__":
     app.run(debug=True)

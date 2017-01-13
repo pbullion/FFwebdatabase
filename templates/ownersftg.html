@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container-fluid">
+<div class="row">
+    <div class="col-xs-12 members">
+        <table>
+    <tr>
+    <th class="tableheader">Member</th>
+    <th class="tableheader">Start</th>
+    <th class="tableheader">End</th>
+    </tr>
+                {% for teams in result_list %}
+
+    <tr class="standings">
+        <td class="row-team"><a href="{{teams.idowners}}/teamnames">{{ teams.name }}</a></td>
+        <td class="row-yearstart">{{ teams.yearstarted }}</td>
+        <td class="row-yearend">{{ teams.yearended }}</td>
+    </tr>
+</table>
+</div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
+
+
+
+
+{% endblock %}
