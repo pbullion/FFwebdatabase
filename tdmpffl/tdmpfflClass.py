@@ -7,6 +7,7 @@
 import pg
 import os
 import nflgame
+from config import *
 
 
 # class Database(object):
