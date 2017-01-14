@@ -10,30 +10,6 @@ import nflgame
 from config import *
 
 
-# class Database(object):
-#     @staticmethod
-#     def getConnection():
-#         db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
-#         return
-#     @staticmethod
-#     def escape(value):
-#         return value.replace("'","''")
-#     @staticmethod
-#     def getResult(query,getOne=False):
-#
-#         Cursor.close()
-#         return result_set
-#     @staticmethod
-#     def doQuery(query):
-#         conn = Database.getConnection()
-#         cur = conn.cursor()
-#         cur.execute(query)
-#         conn.commit()
-#         lastId = cur.lastrowid
-#         cur.close()
-#         conn.close()
-#         return lastId
-
 class Owners(object):
     def __init__(self):
         self.name = ""
@@ -135,3 +111,29 @@ class Weeklystats():
         for p in players.rushing().sort('rushing_yds').limit(5):
             msg = '%s %d carries for %d yards and %d TDs'
             print msg % (p, p.rushing_att, p.rushing_yds, p.rushing_tds)
+
+
+
+# class Database(object):
+#     @staticmethod
+#     def getConnection():
+#         db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
+#         return
+#     @staticmethod
+#     def escape(value):
+#         return value.replace("'","''")
+#     @staticmethod
+#     def getResult(query,getOne=False):
+#
+#         Cursor.close()
+#         return result_set
+#     @staticmethod
+#     def doQuery(query):
+#         conn = Database.getConnection()
+#         cur = conn.cursor()
+#         cur.execute(query)
+#         conn.commit()
+#         lastId = cur.lastrowid
+#         cur.close()
+#         conn.close()
+#         return lastId
