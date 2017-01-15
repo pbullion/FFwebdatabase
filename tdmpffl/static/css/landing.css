@@ -112,4 +112,88 @@ ul, ol {
     align-items: baseline;
 }
 
+@media only screen and (max-width: 1170px) {
+.week {
+	display: none;
+}
+.bodyblock {
+	font-size: 16px;
+	padding-top: 150px;
+
+}
+.main-text{
+	font-size: 16px;
+
+}
+.top {
+	font-size: 30px;
+}
+.top5 {
+	font-size: 16px;
+}
+}
+    /* For mobile phones: */
+@media only screen and (max-width: 775px) {
+	body {
+		background-image: url("/static/images/TDMPFFL.png");
+
+	}
+	video {
+		display: none !important;
+	}
+
+	.navbar {
+		display: none;
+	}
+	.menu-bar:img {
+		display: inline;
+		align-items: center;
+	}
+	.menu-bar:img:hover {
+		display: inline;
+		background: white;
+	}
+	.menu-bar {
+		/*padding-top: 450px;*/
+		display: block;
+	    position: absolute;
+	    top: 20px;
+	    left: 50%;
+	    height: 14px;
+	    margin-left: -10px;
+	}
+
+	.row {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.menu {
+	    display: none;
+	    width: 100%;
+		padding-top: 90px;
+	    /*padding: 30px 10px 50px;*/
+	    margin: 0 auto;
+	    text-align: center;
+	    background-color: #fff;
+	}
+	.menu ul {
+	    margin-bottom: 0;
+		padding: 0px;
+	}
+	ul {
+		padding-left: 0px;
+	}
+	.menu a {
+	    color: #333;
+	    text-transform: uppercase;
+	    opacity: 0.8;
+	}
+	.menu a:hover {
+	    text-decoration: none;
+	    opacity: 1;
+		background-color: white;
+	}
+
+}
+
 
