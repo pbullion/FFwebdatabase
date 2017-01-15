@@ -1,5 +1,5 @@
 # Fantasy Champs
-www.fantasychamps.xyz
+<a href="www.fantasychamps.xyz">Live Demo</a>
 
 <b>Overview:</b><p>
 <p>Fantasy Champs is the go to site for getting your fantasy information. It can be the current week results or even the win loss ratio for each individual team for the entire lifetime of the league. There are two levels for Fantasy Champs: free and premium. Free will get you basic statistics where you can see simple things such as the highest score for the season (and lowest) and your win loss ratios. Premium is for the more serious leagues that have multiple games going at once. This will get you a custom league logo made buy us, your own template for your site, more detialed stats. Do you want to know how many times you've played a particular team and your win loss ratio against them? You got it! What about those that have different team names, find out how long a team played in the league and how many name a person has used. 
@@ -40,8 +40,12 @@ We used a Trello board to keep on track and to understand who was working on wha
 
 
 <b>Code Snipits and Screen Shots: </b>
+<p>This is the weekly stats that we pull from NFL Game API. <p><br>
 <img src="https://cloud.githubusercontent.com/assets/23407120/21965818/2534c626-db2d-11e6-89a6-0c46e0914d4e.png"><br>
-<img src="https://cloud.githubusercontent.com/assets/23407120/21965847/b1f432e0-db2d-11e6-96b7-4a1a8dc1f87d.png"<br>
+<p> Below is the screen shot of the site displaing the NFL Game API for Week 16</p><br>
 <img src="https://cloud.githubusercontent.com/assets/23407120/21965866/12643aee-db2e-11e6-882d-9aa9844a50ca.png"><br>
-<img src="https://cloud.githubusercontent.com/assets/23407120/21965939/5844acbe-db2f-11e6-8d2c-50870a9d49be.png"<br>
-<img src="https://cloud.githubusercontent.com/assets/23407120/21965944/5d1d2130-db2f-11e6-8f2d-1538951877d2.png"><br>
+<p> Shot of our Trello Board we used during the project</p><br>
+<img src="https://cloud.githubusercontent.com/assets/23407120/21965847/b1f432e0-db2d-11e6-96b7-4a1a8dc1f87d.png"><br>
+<p> Sample of the free user statistics that are compiled from NFL</p> <br>
+<img src="https://cloud.githubusercontent.com/assets/23407120/21965939/5844acbe-db2f-11e6-8d2c-50870a9d49be.png"><br>
+
