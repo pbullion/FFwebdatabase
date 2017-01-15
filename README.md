@@ -40,3 +40,8 @@ We used a Trello board to keep on track and to understand who was working on wha
 
 
 <b>Code Snipits and Screen Shots: </b>
+<img src="https://cloud.githubusercontent.com/assets/23407120/21965818/2534c626-db2d-11e6-89a6-0c46e0914d4e.png"><br>
+<img src="https://cloud.githubusercontent.com/assets/23407120/21965847/b1f432e0-db2d-11e6-96b7-4a1a8dc1f87d.png"<br>
+<img src="https://cloud.githubusercontent.com/assets/23407120/21965866/12643aee-db2e-11e6-882d-9aa9844a50ca.png"><br>
+<img src="https://cloud.githubusercontent.com/assets/23407120/21965939/5844acbe-db2f-11e6-8d2c-50870a9d49be.png"<br>
+<img src="https://cloud.githubusercontent.com/assets/23407120/21965944/5d1d2130-db2f-11e6-8f2d-1538951877d2.png"><br>
