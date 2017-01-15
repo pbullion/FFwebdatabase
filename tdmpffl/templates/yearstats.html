@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block customstyle %}
+    <link rel="stylesheet" href="/static/css/landing.css">
+    <link rel="stylesheet" href="/static/css/home.css">
+{% endblock %}
+
+
+{% block body %}
+
+
+<div>
+    {% set video_id= range(1, 6)|random %}
+    <video style="opacity:0.8" autoplay loop>
+        <source src="static/tdmpfflvideo{{ video_id }}.mp4" type="video/mp4">
+    </video>
+    <div class="opacity">
+    </div>
+        <div class="container-fluid bodypadding">
+            <div class="row top5">
+                <div class="col-sm-6 col-xs-12">
+                    <h3>Season<br>Top Scores</h3>
+                            <table class="standings">
+                            {% for teams in top_list %}
+                            <tr>
+                                <td class="row-team">{{ teams.teamone }}</td>
+                                <td class="row-score">{{ teams.teamonescore }}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <h3>Season<br>Lowest Scores</h3>
+                            <table class="standings">
+                            {% for teams in low_list %}
+                            <tr>
+                                <td class="row-team">{{ teams.teamone }}</td>
+                                <td class="row-score">{{ teams.teamonescore }}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+
+                </div>
+            </div>
+        </div>
+</div>
+
+{% endblock %}
+
