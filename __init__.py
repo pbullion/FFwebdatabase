@@ -109,10 +109,6 @@ def charge():
 
     return render_template('charge.html',key=stripe_keys['publishable_key'], amount=amount)
 
-@app.route('/ownersftg')
-def ownersftg():
-    return render_template("ownersftg.html")
-
 @app.route('/homeftg')
 def homeftg():
     if session['loggedin'] == True:
@@ -128,10 +124,20 @@ def teamnamesftg(idowners):
     result_list = Teams.get_team_list(idowners)
     return render_template("teamnamesftg.html",team_names=result_list,title="All Teams for")
 
-@app.route("/membersftg")
-def membersftg():
+@app.route("/<year>/standingsftg")
+def standingsftg(year):
+    result_list = Owners.standings(year)
+    return render_template("standingsftg.html",title="Standings",result_list=result_list)
+
+@app.route("/ownersftg")
+def ownersftg():
     result_list = Owners.getOwners()
     return render_template("ownersftg.html",result_list=result_list,title="Members of For the Girls")
+
+@app.route("/alltimeftg")
+def alltime():
+    result_list = Owners.alltime()
+    return render_template("alltimeftg.html",result_list=result_list,title="All time stats")
 
 if __name__ == "__main__":
     app.run(debug=True)

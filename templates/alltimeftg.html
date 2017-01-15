@@ -1,4 +1,5 @@
 {% extends "landing.html" %}
+
 {% block nav %}
 <nav class="navbar navbar-fixed-top">
  <div class="nav">
@@ -15,16 +16,16 @@
                     <a href="/" class="" style="transform: scale(1); "><img style="height: 172px; width: 160px;" src="static/logos/fflogo.png" class="logonav"></a>
        </ul>
          <ul class="nav navbar-nav nav-item">
-<li class="nav-item"><a href="/alltimeftg">Top Stats</a></li>
-     <li class="landing"><a href="/">Back to Home</a></li>
+             <li class="nav-item"><a href="/alltimeftg">Top Stats</a></li>
+             <li class="landing"><a href="/">Back to Home</a></li>
        </ul>
  </div>
 </nav>
 
-<!-- this is the "hamburger menu" -->
+<!-- Hamburger Menu -->
 <div class="hb">
-<a class="menu-bar" data-toggle="collapse" href="#menu"><img src="/static/logos/fflogonav.png" /></a>
-<ul>
+    <a class="menu-bar" data-toggle="collapse" href="#menu"><img src="/static/logos/fflogonav.png" /></a>
+    <ul>
     <div class="collapse menu" id="menu">
 
             <ul class="nav navbar-nav">
@@ -42,38 +43,40 @@
         </ul>
     </div>
 </div>
+
 {% endblock %}
 
+{% block body_top %}
+
+<h1>{{title}}</h1>
+{% endblock %}
 
 {% block body %}
-<div class="container-fluid bodypadding">
-            <div class="row">
-                <div class="col-sm-6 col-xs-12">
-                    <h3 class="top5">Season<br>Top Scores</h3>
-                            <table class="main-text standings">
-                            {% for teams in top_list %}
-                            <tr>
-                                <td class="row-team">{{ teams.teamone }}</td>
-                                <td class="row-score">{{ teams.teamonescore }}</td>
-                            </tr>
-                            {% endfor %}
-                        </table>
-                </div>
 
-                <div class="col-sm-6 col-xs-12">
-                    <h3 class="top5">Season<br>Lowest Scores</h3>
-                            <table class="main-text standings">
-                            {% for teams in low_list %}
-                            <tr>
-                                <td class="row-team">{{ teams.teamone }}</td>
-                                <td class="row-score">{{ teams.teamonescore }}</td>
-                            </tr>
-                            {% endfor %}
-                        </table>
 
-                </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12" id="center">
+
+    <table style="margin-top: 125px;" class="standings">
+    <tr>
+        <th class="row-1 row-owner top5">Member</th>
+        <th class="row-2 row-win top5">Win</th>
+        <th class="row-3 row-loss top5">Loss</th>
+        <th class="row-4 row-percent top5">%</th>
+    </tr>
+    {% for owner in result_list %}
+    <tr class="main-text">
+        <td>{{ owner.owner }}</td>
+        <td>{{ owner.wins }}</td>
+        <td>{{ owner.loss }}</td>
+        <td>{{ owner.percent }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
             </div>
         </div>
-</div>
-
+    </div>
+<div>
 {% endblock %}

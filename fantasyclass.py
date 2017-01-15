@@ -13,7 +13,7 @@ db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
 class Login:
     def __init__(self, username):
         self.username = username
-        self.password = password
+        self.kpassword = password
         query = "SELECT username, password FROM userinfo where username= '%s'" % username
         result_set= Database.getResult(query, True)
 

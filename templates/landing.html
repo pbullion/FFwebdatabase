@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    {% block nav %}
     <nav class="navbar navbar-fixed-top">
         {% if session["loggedin"] %}
         <div class="pull-left welcome">
@@ -30,7 +31,6 @@
                         <ul class="sub-menu ">
                             <li><a href="/tdmpffl/templates/home.html">TDMPFFL</a></li>
                             <li><a href="homeftg">For The Girls</a></li>
-                            <li><a href="#">Wild Peach HQ</a></li>
                         </ul>
                     </li>
                     {% if session["loggedin"] %}
@@ -53,6 +53,7 @@
                 </ul>
             </div>
         </nav>
+
 <!-- this is the "hamburger menu" -->
 <div class="hb">
 <a class="menu-bar" data-toggle="collapse" href="#menu"><img src="/static/logos/fflogonav.png" /></a>
@@ -78,6 +79,7 @@
         </ul>
     </div>
 </div>
+{% endblock %}
 <!--plays the video in the background -->
 <div class="bodyblock">
         {% set video_id= range(1, 4)|random %}
@@ -90,7 +92,7 @@
 {% block body %}
 
     <div>
-        <!-- <p class="text">Week 16 top 5 by positions</p> -->
+
         <div class="container-fluid stat-text">
             <div class="row">
                 <div class="col-md-12">
