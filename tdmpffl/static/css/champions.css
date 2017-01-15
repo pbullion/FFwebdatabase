@@ -4,14 +4,6 @@ body {
     box-sizing: border-box;
 }
 
-#championsheader {
-    text-align: center;
-    color: white;
-    padding-bottom: 30px;
-    font-size: 40px;
-    font-family: 'Candal', sans-serif;
-}
-
 h1  {
     font-size: 25px;
     font-family: 'Candal', sans-serif;
@@ -23,19 +15,24 @@ h2  {
 #championspic {
     text-align: center;
     color: white;
-    padding-bottom: 15px;
+    padding-bottom: 0px;
 }
 
 #championspic img {
     border-radius: 100%;
     height: 210px;
     width: 210px;
+    padding-bottom: 5px;
 }
 
 #championspic h2 {
-    margin-top: 5px;
+    margin-bottom: 10px !important;
+    margin-top: 5px !important;
 }
-
+#championspic h1 {
+    margin-bottom: 0px !important;
+    margin-top: 5px !important;
+}
 
 
 .clearfix() {
