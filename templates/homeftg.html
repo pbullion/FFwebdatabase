@@ -1,7 +1,7 @@
 {% extends "landing.html" %}
 {% block customstyle %}
-    <link rel="stylesheet" href="/static/css/landing.css">
-    <link rel="stylesheet" href="/static/css/homeftg.css">
+    <link rel="stylesheet" href="/static/landing.css">
+    <link rel="stylesheet" href="/static/homeftg.css">
 {% endblock %}
 {% block nav %}
 <nav class="navbar navbar-fixed-top">
@@ -53,7 +53,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-12 col-sm-6">
-                    <h3 class="top5">Season<br>Top Scores</h3>
+                    <th>
+                    <h3 class="top5">Season<br>Top Scores</h3></th>
                             <table class="main-text standings">
                             {% for teams in top_list %}
                             <tr>
@@ -64,7 +65,7 @@
                         </table>
                 </div>
                 <div class="col-sm-6 col-xs-12">
-                    <h3 class="top5">Season<br>Lowest Scores</h3>
+                    <th><h3 class="top5">Season<br>Lowest Scores</h3></th>
                             <table class="main-text standings">
                             {% for teams in low_list %}
                             <tr>
