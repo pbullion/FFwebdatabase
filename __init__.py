@@ -59,11 +59,14 @@ def submitlogin():
 
 @app.route('/register', methods=['POST'])
 def register():
-   username = request.form.get('username')
-   password = request.form.get('password')
-   firstname = request.form.get('firstname')
-   lastname = request.form.get('lastname')
-   q = "INSERT INTO userinfo (firstname, lastname, username, password) values ('%s','%s','%s','%s')" % (firstname, lastname, username, password)
+  username = request.form.get('username')
+  password = request.form.get('password')
+  firstname = request.form.get('firstname')
+  lastname = request.form.get('lastname')
+  leaguesite = request.form.get('leaguesite')
+  leagueID = request.form.get('leagueID')
+  leaguename = request.form.get('leaguename')
+   q = "INSERT INTO userinfo (firstname, lastname, username, password, leaguesite, leagueID, leaguename) values ('%s','%s','%s','%s','%s','%s','%s')" % (firstname, lastname, username, password, leaguesite, leagueID, leaguename)
    query = db.query(q)
    session['username'] = username
    return render_template('success.html')
