@@ -47,9 +47,9 @@
 
 
 {% block body %}
-<div class="container-fluid bodypadding">
-            <div class="row">
-                <div class="col-sm-6 col-xs-12">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
                     <h3 class="top5">Season<br>Top Scores</h3>
                             <table class="main-text standings">
                             {% for teams in top_list %}
@@ -60,7 +60,6 @@
                             {% endfor %}
                         </table>
                 </div>
-
                 <div class="col-sm-6 col-xs-12">
                     <h3 class="top5">Season<br>Lowest Scores</h3>
                             <table class="main-text standings">
