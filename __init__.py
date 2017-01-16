@@ -57,7 +57,7 @@ def submitlogin():
        message="Invalid username or password"
        return render_template('login.html',message=message)
 
-@app.route('/register', methods=['POST'])
+@app.route('/register', methods=['POST', 'GET'])
 def register():
   username = request.form.get('username')
   password = request.form.get('password')
@@ -66,10 +66,10 @@ def register():
   leaguesite = request.form.get('leaguesite')
   leagueID = request.form.get('leagueID')
   leaguename = request.form.get('leaguename')
-   q = "INSERT INTO userinfo (firstname, lastname, username, password, leaguesite, leagueID, leaguename) values ('%s','%s','%s','%s','%s','%s','%s')" % (firstname, lastname, username, password, leaguesite, leagueID, leaguename)
-   query = db.query(q)
-   session['username'] = username
-   return render_template('success.html')
+  q = "INSERT INTO public.userinfo (firstname, lastname, username, password, leaguesite, \"leagueID\", leaguename) values ('%s','%s','%s','%s','%s','%s','%s')" % (firstname, lastname, username, password, leaguesite, leagueID, leaguename)
+  query = db.query(q)
+  session['username'] = username
+  return redirect('/')
 
 @app.route('/about')
 def about():
