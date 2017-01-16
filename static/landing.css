@@ -20,8 +20,8 @@ video {
 	visibility: visible;
 }
 
-
 .opacity    {
+
     position: absolute;
     background-color: black;
     opacity: .6;

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Fantasy Stuff</title>
+    <title>Fantasy Champs</title>
     <link rel="stylesheet" href="static/landing.css">
     <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Holtwood+One+SC" rel="stylesheet">
@@ -55,9 +55,9 @@
         </nav>
 
 <!-- this is the "hamburger menu" -->
-<div class="hb">
-<a class="menu-bar" data-toggle="collapse" href="#menu"><img src="/static/logos/fflogonav.png" /></a>
-<ul>
+    <div class="hb">
+        <a class="menu-bar" data-toggle="collapse" href="#menu"><img src="/static/logos/fflogonav.png" /></a>
+        <ul>
     <div class="collapse menu" id="menu">
 
             <ul class="nav navbar-nav">
@@ -78,9 +78,10 @@
             <li class="nav-item"><a href="about">About</a></li>
         </ul>
     </div>
-</div>
+    </div>
 {% endblock %}
 <!--plays the video in the background -->
+{% block body %}
 <div class="bodyblock">
         {% set video_id= range(1, 4)|random %}
         <video style="opacity:0.8" >
@@ -88,40 +89,37 @@
         </video>
 
     <div class="opacity">
-    </div>
-{% block body %}
-
-    <div>
-
-        <div class="container-fluid stat-text">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="top5">Quarterback</h1>
-                        {% for p in quarterback_result %}
-                        <li class="main-text">{{p}}</li>
-                        {% endfor %}
+        </div>
+        <div>
+            <div class="container-fluid stat-text">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="top5">Quarterback</h1>
+                            {% for p in quarterback_result %}
+                            <li class="main-text">{{p}}</li>
+                            {% endfor %}
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5 col-xs-12">
+                <div class="row">
+                    <div class="col-md-5 col-xs-12">
 
-                    <h1 class="top5">Receiving</h1></th>
-                        {% for p in receiving_result %}
-                        <li class="main-text">{{p}}</li>
-                        {% endfor %}
-                </div>
-                <div class="col-md-2 col-xs-12 week">
-                        <br /><br /><br /><h1 class="top">Week 16</h1>
-                </div>
-                <div class="col-md-5 col-xs-12">
-                    <h1 class="top5">Running Backs</h1>
-                        {% for p in rushing_results %}
-                        <li class="main-text">{{p}}</li>
-                        {% endfor %}
+                        <h1 class="top5">Receiving</h1></th>
+                            {% for p in receiving_result %}
+                            <li class="main-text">{{p}}</li>
+                            {% endfor %}
+                    </div>
+                    <div class="col-md-2 col-xs-12 week">
+                            <br /><br /><br /><h1 class="top">Week 16</h1>
+                    </div>
+                    <div class="col-md-5 col-xs-12">
+                        <h1 class="top5">Running Backs</h1>
+                            {% for p in rushing_results %}
+                            <li class="main-text">{{p}}</li>
+                            {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>
 {% endblock %}
 

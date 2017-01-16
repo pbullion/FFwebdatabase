@@ -109,6 +109,15 @@ def charge():
 
     return render_template('charge.html',key=stripe_keys['publishable_key'], amount=amount)
 
+@app.route('/hometdmpffl')
+def hometdmpffl():
+    if session['loggedin'] == True:
+        top_list = Owners.topscores()
+        low_list = Owners.lowscores()
+        return redirect("www.tdmpffl.com",top_list=top_list,low_list=low_list)
+    else:
+        return render_template("login.html", message=" Please log in to continue:")
+
 @app.route('/homeftg')
 def homeftg():
     if session['loggedin'] == True:

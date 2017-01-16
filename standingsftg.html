@@ -22,7 +22,6 @@
  </div>
 </nav>
 
-<!-- this is the "hamburger menu" -->
 <div class="hb">
 <a class="menu-bar" data-toggle="collapse" href="#menu"><img src="/static/logos/fflogonav.png" /></a>
 <ul>
@@ -43,38 +42,26 @@
         </ul>
     </div>
 </div>
+
 {% endblock %}
 
-
 {% block body %}
-<div class="bodyblock container-fluid bodypadding">
-            <div class="row">
-                <div class="col-sm-6 col-xs-12">
-                    <h3 class="top5">Season<br>Top Scores</h3>
-                            <table class="main-text standings">
-                            {% for teams in top_list %}
-                            <tr>
-                                <td class="row-team">{{ teams.teamone }}</td>
-                                <td class="row-score">{{ teams.teamonescore }}</td>
-                            </tr>
-                            {% endfor %}
-                        </table>
-                </div>
+<table style="margin-top: 150px;" class="standings">
 
-                <div class="col-sm-6 col-xs-12">
-                    <h3 class="top5">Season<br>Lowest Scores</h3>
-                            <table class="main-text standings">
-                            {% for teams in low_list %}
-                            <tr>
-                                <td class="row-team">{{ teams.teamone }}</td>
-                                <td class="row-score">{{ teams.teamonescore }}</td>
-                            </tr>
-                            {% endfor %}
-                        </table>
+    <tr>
+        <th class="row-1 row-team">Team</th>
+        <th class="row-2 row-owner">Owner</th>
+        <th class="row-4 row-win">Win</th>
+        <th class="row-5 row-loss">Loss</th>
+    </tr>
+    {% for owner in result_list %}
+    <tr>
+        <td>{{ owner.team }}</td>
+        <td>{{ owner.owner }}</td>
+        <td>{{ owner.wins }}</td>
+        <td>{{ owner.loss }}</td>
+    </tr>
+    {% endfor %}
 
-                </div>
-            </div>
-        </div>
-</div>
-
+</table>
 {% endblock %}
