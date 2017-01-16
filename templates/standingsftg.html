@@ -13,7 +13,7 @@
          </ul></li>
      </ul>
      <ul class="nav navbar-nav">
-                    <a href="/" class="" style="transform: scale(1); "><img style="height: 172px; width: 160px;" src="static/logos/fflogo.png" class="logonav"></a>
+                    <a href="/" class="" style="transform: scale(1); "><img style="height: 172px; width: 160px;" src="/../static/logos/fflogo.png" class="logonav"></a>
        </ul>
          <ul class="nav navbar-nav nav-item">
              <li class="nav-item"><a href="/alltimeftg">Top Stats</a></li>
@@ -23,44 +23,46 @@
 </nav>
 
 <div class="hb">
-<a class="menu-bar" data-toggle="collapse" href="#menu"><img src="/static/logos/fflogonav.png" /></a>
-<ul>
-    <div class="collapse menu" id="menu">
+    <a class="menu-bar" data-toggle="collapse" href="#menu"><img src="/../static/logos/fflogonav.png" /></a>
+    <ul>
+        <div class="collapse menu" id="menu">
 
-            <ul class="nav navbar-nav">
-            <li class="nav-item"><a href="/ownersftg#">Members</a></li>
-            <li class="nav-item"><a href="#">Standings</a>
-                <ul class="sub-menu ">
-                    <li><a href="/2016/standingsftg">2016</a></li>
-                    <li><a href="/2015/standingsftg">2015</a></li>
-                    <li><a href="/2014/standingsftg">2014</a></li>
-                </ul></li>
+                <ul class="nav navbar-nav">
+                <li class="nav-item"><a href="/ownersftg#">Members</a></li>
+                <li class="nav-item"><a href="#">Standings</a>
+                    <ul class="sub-menu ">
+                        <li><a href="/2016/standingsftg">2016</a></li>
+                        <li><a href="/2015/standingsftg">2015</a></li>
+                        <li><a href="/2014/standingsftg">2014</a></li>
+                    </ul></li>
+                </ul>
+                <li><a href="/alltimeftg">Top Stats</a>
+                </li>
+                <li class="nav-item"><a href="/">Back to Home</a></li>
             </ul>
-            <li><a href="/alltimeftg">Top Stats</a>
-            </li>
-            <li class="nav-item"><a href="/">Back to Home</a></li>
-        </ul>
     </div>
 </div>
-
 {% endblock %}
 
 {% block body %}
-<table style="margin-top: 150px;" class="standings">
-
-    <tr>
-        <th class="row-1 row-team">Team</th>
-        <th class="row-2 row-owner">Owner</th>
-        <th class="row-4 row-win">Win</th>
-        <th class="row-5 row-loss">Loss</th>
-    </tr>
-    {% for owner in result_list %}
-    <tr>
-        <td>{{ owner.team }}</td>
-        <td>{{ owner.owner }}</td>
-        <td>{{ owner.wins }}</td>
-        <td>{{ owner.loss }}</td>
-    </tr>
+<!-- <br class="bodyblock" /> -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12" id="center">
+    <table class="standings">
+        <tr class="top5">
+            <th class="row-1 row-team">Team</th>
+            <th class="row-2 row-owner">Owner</th>
+            <th class="row-4 row-win">Win</th>
+            <th class="row-5 row-loss">Loss</th>
+        </tr>
+        {% for owner in result_list %}
+        <tr class="main-text">
+            <td>{{ owner.team }}</td>
+            <td>{{ owner.owner }}</td>
+            <td>{{ owner.wins }}</td>
+            <td>{{ owner.loss }}</td>
+        </tr>
     {% endfor %}
 
 </table>

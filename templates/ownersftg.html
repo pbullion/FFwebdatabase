@@ -24,8 +24,8 @@
 
 <!-- Hamburger Menu -->
 <div class="hb">
-<a class="menu-bar" data-toggle="collapse" href="#menu"><img src="/static/logos/fflogonav.png" /></a>
-<ul>
+    <a class="menu-bar" data-toggle="collapse" href="#menu"><img src="/../static/logos/fflogonav.png" /></a>
+    <ul>
     <div class="collapse menu" id="menu">
 
             <ul class="nav navbar-nav">
@@ -47,17 +47,17 @@
 
 {% block body %}
 <div class="container-fluid">
-<div class="row">
-    <div class="col-xs-12">
-        <table style="margin-top: 150px;" class="standings">
-    <tr>
-    <th class="tableheader">Member</th>
-    <th class="tableheader">Start</th>
-    <th class="tableheader">End</th>
-    </tr>
+    <div class="row">
+        <div class="col-xs-12" id="center">
+        <table class="standings">
+            <tr class="top5">
+                <th class="tableheader">Member</th>
+                <th class="tableheader">Start</th>
+                <th class="tableheader">End</th>
+            </tr>
                 {% for teams in result_list %}
 
-        <tr class="standings">
+        <tr class="main-text">
             <td class="row-team">{{ teams.name }}</td>
             <td class="row-yearstart">{{ teams.yearstarted }}</td>
             <td class="row-yearend">{{ teams.yearended }}</td>

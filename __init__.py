@@ -8,13 +8,16 @@ from config import *
 import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
-# 
+
 # stripe_keys = {
-#   'secret_key': os.environ['SECRET_KEY'],
-#   'publishable_key': os.environ['PUBLISHABLE_KEY']
+#   'secret_key': ['SECRET_KEY'],
+#   'publishable_key':['PUBLISHABLE_KEY']
 # }
-#
-# stripe.api_key = stripe_keys['secret_key']
+secret_key = SECRET_KEY
+publishable_key = PUBLISHABLE_KEY
+
+
+stripe.api_key = secret_key
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'herro')
@@ -89,7 +92,7 @@ def logout():
 
 @app.route('/premium')
 def premium():
-    return render_template('premium.html', key=stripe_keys['publishable_key'])
+    return render_template('premium.html', key=publishable_key)
 
 @app.route('/charge', methods=['POST'])
 def charge():
@@ -107,14 +110,14 @@ def charge():
     #     description='Flask Charge'
     # )
 
-    return render_template('charge.html',key=stripe_keys['publishable_key'], amount=amount)
+    return render_template('charge.html',key=publishable_key, amount=amount)
 
 @app.route('/hometdmpffl')
 def hometdmpffl():
     if session['loggedin'] == True:
         top_list = Owners.topscores()
         low_list = Owners.lowscores()
-        return redirect("www.tdmpffl.com")
+        return redirect("http://www.tdmpffl.com")
     else:
         return render_template("login.html", message=" Please log in to continue:")
 

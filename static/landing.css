@@ -38,6 +38,7 @@ body {
     text-align: center;
 	font-family: 'Arimo', sans-serif;
 }
+/*Navbar settings*/
 
 .logonav:hover {
     cursor:default;
@@ -101,11 +102,12 @@ ul.sub-menu {
     background-color: #0285C9;
 }
 
-
-
+/*Body block settings*/
 .bodyblock {
+	text-align: center;
 	padding-top: 250px;
 	font-size: 22px;
+	font-family: 'Arimo', sans-serif;
 }
 .top5 {
 	font-family: 'Holtwood One SC', serif;
@@ -149,33 +151,84 @@ ul, li {
 .menu-bar {
 	display: none;
 }
+
+/* Table settings for the team tables and such */
+
+.standings {
+	text-align: center;
+	table-layout: fixed;
+	white-space: nowrap;
+    /*margin-top: 125px;*/
+    width: 60%;
+}
+
+.standings td {
+	/*color:white;*/
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    font-size: 22px;
+}
+.standings th   {
+    /*color:white;*/
+    font-size: 30px;
+    text-align: center;
+}
+/* Column widths are based on these cells */
+.row-owner {
+  width: 50%;
+}
+.row-win {
+  width: 15%;
+}
+.row-loss {
+  width: 15%;
+}
+.row-percent {
+  width: 20%;
+}
+.row-team {
+  width: 50%;
+}
+.row-teamstart {
+  width: 25%;
+}
+.row-teamend {
+  width: 25%;
+}
+.tableheader    {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+
+/*Mobile and break point settings*/
 @media only screen and (max-width: 1170px) {
 .week {
 	display: none;
-}
-.bodyblock {
-	font-size: 16px;
-	padding-top: 150px;
+	}
+	.bodyblock {
+		font-size: 16px;
+		padding-top: 150px;
 
-}
-.main-text{
-	font-size: 16px;
+	}
+	.main-text{
+		font-size: 16px;
 
+	}
+	.top {
+		font-size: 30px;
+	}
+	.top5 .standings{
+		font-size: 16px;
+	}
 }
-.top {
-	font-size: 30px;
-}
-.top5 .standings{
-	font-size: 16px;
-}
-}
-
 
 @media only screen and (max-width: 775px) {
     /* For mobile phones: */
 	body {
 		background-image: url("/static/mobilebackground1.jpg");
-
 	}
 	video {
 		display: none !important;
@@ -238,52 +291,4 @@ ul, li {
 		background-color: white;
 	}
 
-}
-
-
-.standings {
-    text-align: center;
-  table-layout: fixed;
-  white-space: nowrap;
-    margin-top: 125px;
-    width: 60%;
-}
-.standings td {
-    color:white;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-    font-size: 22px;
-}
-.standings th   {
-    color:white;
-    font-size: 30px;
-    text-align: center;
-}
-/* Column widths are based on these cells */
-.row-owner {
-  width: 50%;
-}
-.row-win {
-  width: 15%;
-}
-.row-loss {
-  width: 15%;
-}
-.row-percent {
-  width: 20%;
-}
-.row-team {
-  width: 50%;
-}
-.row-teamstart {
-  width: 25%;
-}
-.row-teamend {
-  width: 25%;
-}
-.tableheader    {
-    text-align: center;
-    font-size: 30px;
-    color: white;
 }

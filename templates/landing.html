@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Fantasy Champs</title>
-    <link rel="stylesheet" href="static/landing.css">
+    <link rel="stylesheet" href="/../static/landing.css">
     <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Holtwood+One+SC" rel="stylesheet">
 
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="shortcut icon" href="static/logos/10831-american-football.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/../static/logos/10831-american-football.ico" type="image/x-icon">
 
 </head>
 
@@ -56,7 +56,7 @@
 
 <!-- this is the "hamburger menu" -->
     <div class="hb">
-        <a class="menu-bar" data-toggle="collapse" href="#menu"><img src="/static/logos/fflogonav.png" /></a>
+        <a class="menu-bar" data-toggle="collapse" href="#menu"><img src="/../static/logos/fflogonav.png" /></a>
         <ul>
     <div class="collapse menu" id="menu">
 
@@ -81,16 +81,16 @@
     </div>
 {% endblock %}
 <!--plays the video in the background -->
-{% block body %}
 <div class="bodyblock">
-        {% set video_id= range(1, 4)|random %}
-        <video style="opacity:0.8" >
-        <source src="static/landingpage{{ video_id }}.mp4" type="video/mp4">
+    {% set video_id= range(1, 4)|random %}
+    <video style="opacity:0.8" autoplay loop>
+        <source src="/../static/landingpage{{ video_id }}.mp4" type="video/mp4" >
         </video>
 
-    <div class="opacity">
+        <div class="opacity">
         </div>
         <div>
+{% block body %}
             <div class="container-fluid stat-text">
                 <div class="row">
                     <div class="col-md-12">
@@ -186,7 +186,7 @@
 
 </body>
 
-<script type="text/javascript"> $(function() {
+<!-- <script type="text/javascript"> $(function() {
 
 // onload
 if(document.body.clientWidth >= 775) {
@@ -206,7 +206,5 @@ $(window).resize(function() {
     }
 });
 });
-</script>
-
-
+</script> -->
 </html>

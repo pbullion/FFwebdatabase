@@ -1,11 +1,8 @@
 import nflgame
 import os
 import pg
+from config import *
 
-DBUSER='postgres'
-DBPASS='daley'
-DBHOST='127.0.0.1'
-DBNAME='fantasychamps'
 
 db = pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
 
