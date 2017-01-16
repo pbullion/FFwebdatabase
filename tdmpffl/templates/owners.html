@@ -11,7 +11,7 @@
 
 {% block body %}
 <div>
-    {% set video_id= range(1, 6)|random %}
+    {% set video_id= range(1, 7)|random %}
     <video style="opacity:0.8" autoplay loop>
         <source src="/static/tdmpfflvideo{{ video_id }}.mp4" type="video/mp4">
     </video>
