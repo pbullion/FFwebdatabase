@@ -188,7 +188,10 @@ ul, li {
   width: 20%;
 }
 .row-team {
-  width: 50%;
+  width: 80%;
+}
+.row-score {
+  width: 20%;
 }
 .row-teamstart {
   width: 25%;
