@@ -8,7 +8,7 @@ from config import *
 import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
-
+# 
 # stripe_keys = {
 #   'secret_key': os.environ['SECRET_KEY'],
 #   'publishable_key': os.environ['PUBLISHABLE_KEY']
@@ -114,7 +114,7 @@ def hometdmpffl():
     if session['loggedin'] == True:
         top_list = Owners.topscores()
         low_list = Owners.lowscores()
-        return redirect("www.tdmpffl.com",top_list=top_list,low_list=low_list)
+        return redirect("www.tdmpffl.com")
     else:
         return render_template("login.html", message=" Please log in to continue:")
 
