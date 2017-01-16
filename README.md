@@ -48,4 +48,7 @@ We used a Trello board to keep on track and to understand who was working on wha
 <img src="https://cloud.githubusercontent.com/assets/23407120/21965847/b1f432e0-db2d-11e6-96b7-4a1a8dc1f87d.png"><br>
 <p> Sample of the free user statistics that are compiled from NFL</p> <br>
 <img src="https://cloud.githubusercontent.com/assets/23407120/21965939/5844acbe-db2f-11e6-8d2c-50870a9d49be.png"><br>
+<p>Below is an example of the Premium option where you would have the custom logo and site:</p><br>
+<img src="https://cloud.githubusercontent.com/assets/23407120/21968248/3e62c5aa-db58-11e6-9f1e-7d77566b4fbd.png">
+
 
