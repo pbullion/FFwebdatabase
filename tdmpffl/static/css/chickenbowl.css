@@ -38,8 +38,6 @@ body {
     margin-top: 5px;
 }
 
-
-
 .clearfix() {
     &:before, &:after {
         content: " ";
