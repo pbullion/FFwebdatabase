@@ -7,7 +7,7 @@ body {
 #history {
     text-align: center;
     color: white;
-    margin-top: 80px;
+    margin-top: 15px;
 }
 
 #history h1 {
@@ -35,4 +35,14 @@ body {
     &:after {
         clear: both;
     }
+}
+#aboutpic1 {
+    height: 300px;
+    width: auto;
+    vertical-align: middle;
+}
+#aboutpic2 {
+    height: 300px;
+    width: auto;
+    vertical-align: middle;
 }
