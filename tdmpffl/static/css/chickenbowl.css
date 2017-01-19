@@ -25,13 +25,13 @@ body {
 #chickenbowlpiccody {
     border-radius: 5%;
     height: 425px;
-    width: 239px;
+    width: auto;
 }
 
 #chickenbowlpicdoug {
     border-radius: 5%;
     height: 425px;
-    width: 159px;
+    width: auto;
 }
 
 #chickenbowlpic h2 {
